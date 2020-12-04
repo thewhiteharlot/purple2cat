@@ -317,7 +317,7 @@ async def _(event):
             send_games=gamee,
             send_inline=ainline,
             send_polls=gpoll,
-            embed_links=emed_link,
+            embed_links=embed_link,
             invite_users=adduser,
             pin_messages=cpin,
             change_info=changeinfo,
