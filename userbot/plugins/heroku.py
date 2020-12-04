@@ -34,13 +34,15 @@ async def variable(var):
     """
     if Config.HEROKU_API_KEY is None:
         return await edit_delete(
-            var, "Set the required var in heroku to function this normally `HEROKU_API_KEY`."
+            var,
+            "Set the required var in heroku to function this normally `HEROKU_API_KEY`.",
         )
     if Config.HEROKU_APP_NAME is not None:
         app = Heroku.app(Config.HEROKU_APP_NAME)
     else:
         return await edit_delete(
-            var, "Set the required var in heroku to function this normally `HEROKU_APP_NAME`."
+            var,
+            "Set the required var in heroku to function this normally `HEROKU_APP_NAME`.",
         )
     exe = var.pattern_match.group(1)
     heroku_var = app.config()
@@ -117,11 +119,13 @@ async def dyno_usage(dyno):
     """
     if HEROKU_APP_NAME is None:
         return await edit_delete(
-            dyno, "Set the required var in heroku to function this normally `HEROKU_APP_NAME`."
+            dyno,
+            "Set the required var in heroku to function this normally `HEROKU_APP_NAME`.",
         )
     if HEROKU_API_KEY is None:
         return await edit_delete(
-            dyno, "Set the required var in heroku to function this normally `HEROKU_API_KEY`."
+            dyno,
+            "Set the required var in heroku to function this normally `HEROKU_API_KEY`.",
         )
     dyno = await edit_or_reply(dyno, "`Processing...`")
     useragent = (
@@ -181,11 +185,13 @@ async def dyno_usage(dyno):
 async def _(dyno):
     if HEROKU_APP_NAME is None:
         return await edit_delete(
-            dyno, "Set the required var in heroku to function this normally `HEROKU_APP_NAME`."
+            dyno,
+            "Set the required var in heroku to function this normally `HEROKU_APP_NAME`.",
         )
     if HEROKU_API_KEY is None:
         return await edit_delete(
-            dyno, "Set the required var in heroku to function this normally `HEROKU_API_KEY`."
+            dyno,
+            "Set the required var in heroku to function this normally `HEROKU_API_KEY`.",
         )
     try:
         Heroku = heroku3.from_key(HEROKU_API_KEY)
