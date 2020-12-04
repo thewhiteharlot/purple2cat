@@ -27,6 +27,7 @@ async def _(event):
         gif = chat_per.send_gifs
         gamee = chat_per.send_games
         ainline = chat_per.send_inline
+        embed_link = chat_per.embed_links
         gpoll = chat_per.send_polls
         adduser = chat_per.invite_users
         cpin = chat_per.pin_messages
@@ -55,6 +56,14 @@ async def _(event):
             else:
                 sticker = True
             locktype = "stickers"
+        elif input_str == "preview":
+            if embed_link:
+                return await edit_delete(
+                    event, "`This group is already locked with previewing links`"
+                )
+            else:
+                embed_link = True
+            locktype = "preview links"
         elif input_str == "gif":
             if gif:
                 return await edit_delete(
@@ -72,12 +81,12 @@ async def _(event):
                 gamee = True
             locktype = "games"
         elif input_str == "inline":
-            if inline:
+            if ainline:
                 return await edit_delete(
                     event, "`This group is already locked with using inline bots`"
                 )
             else:
-                pass
+                ainline = True
             locktype = "inline bots"
         elif input_str == "poll":
             if gpoll:
@@ -108,7 +117,7 @@ async def _(event):
             if changeinfo:
                 return await edit_delete(
                     event,
-                    "`This group is already locked with Changing grup info by users`",
+                    "`This group is already locked with Changing group info by users`",
                 )
             else:
                 changeinfo = True
@@ -120,6 +129,7 @@ async def _(event):
             gif = True
             gamee = True
             ainline = True
+            embed_link = True
             gpoll = True
             adduser = True
             cpin = True
@@ -128,7 +138,7 @@ async def _(event):
         else:
             if input_str:
                 return await edit_delete(
-                    event, f"`Invalid lock type:` {input_str}", time=5
+                    event, f"**Invalid lock type :** `{input_str}`", time=5
                 )
 
             else:
@@ -141,6 +151,7 @@ async def _(event):
             send_gifs=gif,
             send_games=gamee,
             send_inline=ainline,
+            embed_links=embed_link,
             send_polls=gpoll,
             invite_users=adduser,
             pin_messages=cpin,
@@ -182,6 +193,7 @@ async def _(event):
         gamee = chat_per.send_games
         ainline = chat_per.send_inline
         gpoll = chat_per.send_polls
+        embed_link = chat_per.embed_links
         adduser = chat_per.invite_users
         cpin = chat_per.pin_messages
         changeinfo = chat_per.change_info
@@ -209,6 +221,14 @@ async def _(event):
                     event, "`This group is already unlocked with sending stickers`"
                 )
             locktype = "stickers"
+        elif input_str == "preview":
+            if embed_link:
+                embed_link = False
+            else:
+                return await edit_delete(
+                    event, "`This group is already unlocked with preview links`"
+                )
+            locktype = "preview links"
         elif input_str == "gif":
             if gif:
                 gif = False
@@ -226,8 +246,8 @@ async def _(event):
                 )
             locktype = "games"
         elif input_str == "inline":
-            if inline:
-                pass
+            if ainline:
+                ainline = False
             else:
                 return await edit_delete(
                     event, "`This group is already unlocked with using inline bots`"
@@ -275,6 +295,7 @@ async def _(event):
             gamee = False
             ainline = False
             gpoll = False
+            embed_link = False
             adduser = False
             cpin = False
             changeinfo = False
@@ -282,7 +303,7 @@ async def _(event):
         else:
             if input_str:
                 return await edit_delete(
-                    event, f"`Invalid unlock type:` {input_str}", time=5
+                    event, f"**Invalid unlock type :** `{input_str}`", time=5
                 )
 
             else:
@@ -296,6 +317,7 @@ async def _(event):
             send_games=gamee,
             send_inline=ainline,
             send_polls=gpoll,
+            embed_links=emed_link,
             invite_users=adduser,
             pin_messages=cpin,
             change_info=changeinfo,
@@ -342,6 +364,7 @@ async def _(event):
         res += "👉 `media`: `{}`\n".format(current_api_locks.send_media)
         res += "👉 `sticker`: `{}`\n".format(current_api_locks.send_stickers)
         res += "👉 `gif`: `{}`\n".format(current_api_locks.send_gifs)
+        res += "👉 `preview`: `{}`\n".format(current_api_locks.embed_links)
         res += "👉 `gamee`: `{}`\n".format(current_api_locks.send_games)
         res += "👉 `ainline`: `{}`\n".format(current_api_locks.send_inline)
         res += "👉 `gpoll`: `{}`\n".format(current_api_locks.send_polls)
@@ -459,7 +482,7 @@ CMD_HELP.update(
         \n  •  **Function : **__Allows you to lock/unlock some common message types in the chat.\
         \n  •  [NOTE: Requires proper admin rights in the chat !!]__\
         \n\n  •  **Available message types to lock/unlock are: \
-        \n  •  API Options : **msg, media, sticker, gif, gamee, ainline, gpoll, adduser, cpin, changeinfo\
+        \n  •  API Options : **msg, media, sticker, gif, preview ,gamee, ainline, gpoll, adduser, cpin, changeinfo\
         \n**  •  DB Options : **bots, commands, email, forward, url\
         \n\n  •  **Syntax : **`.locks`\
         \n  •  **Function : **__To see the active locks__"
