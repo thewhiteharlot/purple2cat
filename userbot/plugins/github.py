@@ -70,9 +70,7 @@ async def download(event):
     start = datetime.now()
     reply_message = await event.get_reply_message()
     try:
-        downloaded_file_name = await event.client.download_media(
-            reply_message.media
-        )
+        downloaded_file_name = await event.client.download_media(reply_message.media)
     except Exception as e:
         await mone.edit(str(e))
     else:
