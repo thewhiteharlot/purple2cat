@@ -202,7 +202,9 @@ async def _(event):
         )
         return
     if len(inputthings) != 2:
-        return await edit_delete(event , "`Syntax was wrong recheck it .tlock 1m sticker`")
+        return await edit_delete(
+            event, "`Syntax was wrong recheck it .tlock 1m sticker`"
+        )
     input_str = inputthings[1]
     if input_str == "msg":
         if msg:
