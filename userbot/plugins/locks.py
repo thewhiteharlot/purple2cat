@@ -97,12 +97,12 @@ async def _(event):
                 gpoll = True
             locktype = "polls"
         elif input_str == "invite":
-            if invite:
+            if adduser:
                 return await edit_delete(
                     event, "`This group is already locked with adding members`"
                 )
             else:
-                pass
+                adduser = True
             locktype = "invites"
         elif input_str == "pin":
             if cpin:
@@ -182,7 +182,6 @@ async def _(event):
     if not event.is_group:
         return await edit_delete(event, "`Idiot! ,This is not a group to lock things `")
     chat_per = (await event.get_chat()).default_banned_rights
-    input_str = inputthings[1]
     msg = chat_per.send_messages
     media = chat_per.send_media
     sticker = chat_per.send_stickers
@@ -202,6 +201,9 @@ async def _(event):
             f"Invalid time type specified. Expected m , h , d or w not as `{cattime}``",
         )
         return
+    if len(inputthings) != 2:
+        return await edit_delete(event , "`Syntax was wrong recheck it .tlock 1m sticker`")
+    input_str = inputthings[1]
     if input_str == "msg":
         if msg:
             return await edit_delete(
@@ -267,12 +269,12 @@ async def _(event):
             gpoll = True
         locktype = "polls"
     elif input_str == "invite":
-        if invite:
+        if adduser:
             return await edit_delete(
                 event, "`This group is already locked with adding members`"
             )
         else:
-            pass
+            adduser = True
         locktype = "invites"
     elif input_str == "pin":
         if cpin:
@@ -432,8 +434,8 @@ async def _(event):
                 )
             locktype = "polls"
         elif input_str == "invite":
-            if invite:
-                pass
+            if adduser:
+                adduser = False
             else:
                 return await edit_delete(
                     event, "`This group is already unlocked with adding members`"
