@@ -7,8 +7,8 @@ from . import CMD_HELP
 from .sql_helper.locks_sql import get_locks, is_locked, update_lock
 
 
-@bot.on(admin_cmd(pattern=r"lock( (.*)|$)"))
-@bot.on(sudo_cmd(pattern=r"lock( (.*)|$)", allow_sudo=True))
+@bot.on(admin_cmd(pattern=r"lock (.*)"))
+@bot.on(sudo_cmd(pattern=r"lock (.*)", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
