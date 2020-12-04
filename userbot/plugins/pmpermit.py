@@ -85,7 +85,7 @@ if Config.PRIVATE_GROUP_ID is not None:
             user = await event.get_chat()
         else:
             input_str = event.pattern_match.group(2)
-            if input_str = "all":
+            if input_str == "all":
                 return
             user, reason = await get_user_from_event(event, secondgroup=True)
             if reason == "all":
