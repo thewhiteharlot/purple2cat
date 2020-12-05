@@ -29,7 +29,7 @@ TWO = " `███████▄▄███████████▄  \n▓�
 THREE = "__Okay. My master has not seen your message yet.He/She usually responds to people,though idk about retarted ones.__\n __He'll respond when he/she comes back, if he/she wants to.There's already a lot of pending messages😶__\n **Please do not spam unless you wish to be blocked and reported.**"
 FOUR = "`Okay. please have the basic manners as to not bother my master too much. If he/she wishes to help you, he/she will respond to you soon.`\n**Do not ask repeatdly else you will be blocked and reported.**"
 LWARN = "**This is your last warning. DO NOT send another message else you will be blocked and reported. Keep patience. My master will respond you ASAP.**\n"
-        
+
 
 @bot.on(events.NewMessage(pattern=r"\/start", incoming=True))
 async def _(event):
