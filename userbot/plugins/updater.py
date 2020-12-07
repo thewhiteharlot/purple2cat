@@ -276,5 +276,7 @@ CMD_HELP.update(
         "\n\n  •  **Syntax : **`.update deploy`"
         "\n  •  **Função :** Implante seu userbot. Então, mesmo que você reinicie, ele não volta para a versão anterior"
         "\nIsso acionará a implantação sempre, mesmo sem atualizações."
+        "\n\n  •  **Syntax : **`.rijard`"
+        "\n  •  **Function :** Muda para o repositorio do Rijard"
     }
 )
