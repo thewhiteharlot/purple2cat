@@ -227,7 +227,7 @@ CMD_HELP.update(
     \n\n**Syntax : **`.lastfm`\
     \n**Uso: **Mostra a faixa de scrobbling atual ou scrobbles mais recentes se nada estiver sendo reproduzido.\
     \n\n**Syntax : **`.lastbio <on/off>`\
-    \n**Uso: **Ativa/desativa a reprodução atual do last.fm em bio.\
+    \n**Uso: **Ativa/desativa a reprodução atual do last.fm na bio.\
     \n\n**Syntax : **`.lastlog <on/off>`\
     \n**Uso: **Ativar/desativar o registro bio do last.fm no grupo bot-log."
     }
