@@ -22,14 +22,14 @@ async def _(event):
     USERNAME = f"tg://user?id={hmm}"
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()
-    text1 = await edit_or_reply(event, "Uhmm... Something is wrong here!!")
+    text1 = await edit_or_reply(event, "Uhmm ... Algo está errado aqui!!")
     await asyncio.sleep(2)
     await text1.delete()
     stcr1 = await event.client.send_file(
         event.chat_id, "CAADAQADRwADnjOcH98isYD5RJTwAg"
     )
     text2 = await event.reply(
-        f"**[{DEFAULTUSER}]({USERNAME}) :** I have to call discussion"
+        f"**[{DEFAULTUSER}]({USERNAME}) :** Eu tenho que chamar a discussão"
     )
     await asyncio.sleep(3)
     await stcr1.delete()
@@ -38,7 +38,7 @@ async def _(event):
         event.chat_id, "CAADAQADRgADnjOcH9odHIXtfgmvAg"
     )
     text3 = await event.reply(
-        f"**[{DEFAULTUSER}]({USERNAME}) :** We have to eject the imposter or will lose "
+        f"**[{DEFAULTUSER}]({USERNAME}) :** Temos que ejetar o impostor ou perderemos "
     )
     await asyncio.sleep(3)
     await stcr2.delete()
@@ -46,22 +46,22 @@ async def _(event):
     stcr3 = await event.client.send_file(
         event.chat_id, "CAADAQADOwADnjOcH77v3Ap51R7gAg"
     )
-    text4 = await event.reply(f"**Others :** Where??? ")
+    text4 = await event.reply(f"**Outros:** Onde??? ")
     await asyncio.sleep(2)
-    await text4.edit(f"**Others :** Who?? ")
+    await text4.edit(f"**Outros:** Quem?? ")
     await asyncio.sleep(2)
     await text4.edit(
-        f"**[{DEFAULTUSER}]({USERNAME}) :** Its {name} , I saw {name}  using vent,"
+        f"**[{DEFAULTUSER}]({USERNAME}) :** Foi {name} , eu vi {name}  usando a ventilação,"
     )
     await asyncio.sleep(3)
-    await text4.edit(f"**Others :**Okay.. Vote {name} ")
+    await text4.edit(f"**Outros: **Okay.. Vote {name} ")
     await asyncio.sleep(2)
     await stcr3.delete()
     await text4.delete()
     stcr4 = await event.client.send_file(
         event.chat_id, "CAADAQADLwADnjOcH-wxu-ehy6NRAg"
     )
-    catevent = await event.reply(f"{name} is ejected.......")
+    catevent = await event.reply(f"{name} foi ejetado.......")
     await asyncio.sleep(2)
     await catevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
     await asyncio.sleep(0.5)
@@ -86,14 +86,14 @@ async def _(event):
     await stcr4.delete()
     if cmd == "":
         await catevent.edit(
-            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} was an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
+            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} era um Impostor.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor restando    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
         await asyncio.sleep(4)
         await catevent.delete()
         await event.client.send_file(event.chat_id, "CAADAQADLQADnjOcH39IqwyR6Q_0Ag")
     elif cmd == "n":
         await catevent.edit(
-            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} was not an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
+            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ{name} não era um Impostor.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor restando    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
         await asyncio.sleep(4)
         await catevent.delete()
@@ -107,7 +107,7 @@ async def _(event):
         return
     name = event.pattern_match.group(2)
     cmd = event.pattern_match.group(1).lower()
-    catevent = await edit_or_reply(event, f"{name} is ejected.......")
+    catevent = await edit_or_reply(event, f"{name} foi ejetado.......")
     await asyncio.sleep(2)
     await catevent.edit("ඞㅤㅤㅤㅤ ㅤㅤㅤㅤ")
     await asyncio.sleep(0.8)
@@ -131,11 +131,11 @@ async def _(event):
     await asyncio.sleep(0.2)
     if cmd == "":
         await catevent.edit(
-            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} was an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
+            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} era um Impostor.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         0 Impostor restando    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
     elif cmd == "n":
         await catevent.edit(
-            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} was not an Imposter.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor remains    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
+            f". 　　　。　　　　•　 　ﾟ　　。 　　.\n .　　　 　　.　　　　　。　　 。　. 　\n\n  . 　　 。   　     ඞ         。 . 　　 • 　　　　•\n\n  ﾟ {name} não era um Impostor.      。　. 　 　       。　.                                        。　. \n                                   　.          。　  　. \n　'         1 Impostor restando    　 。　.  　　.                。　.        。 　     .          。 　            .               .         .    ,      。\n　　ﾟ　　　.　　.    ,　 　。　 　. 　 .     。"
         )
 
 
@@ -143,8 +143,8 @@ CMD_HELP.update(
     {
         "imposter": "**Plugin :** `imposter__`\
 \n\n**Syntax : **`.imp` / `.impn` <text>\
-\n**Uso: ** Find imposter with stickers.\
+\n**Uso: ** Encontre um impostor com adesivos.\
 \n\n**Syntax : **`.timp` / `.timpn` <text>\
-\n**Uso: ** Find imposter only text."
+\n**Uso: ** Encontrar impostor somente texto."
     }
 )
