@@ -161,7 +161,7 @@ async def mega_downloader(megadl):
         else:
             await catevent.edit(
                 f"**➥ file name : **`{file_name}`\n\n"
-                f"**➥ Successfully downloaded in : ** `{file_path}`.\n"
+                f"**➥ Baixado com sucesso em : ** `{file_path}`.\n"
                 f"**➥ Download took :** {time_formatter(download_time)}."
             )
             return None

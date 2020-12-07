@@ -1281,7 +1281,7 @@ async def check_progress_for_dl(event, gid, previous):
                     f"**Name : **`{file.name}`\n"
                     f"**Tamanho: **`{file.total_length_string()}`\n"
                     f"**Path : **`{TMP_DOWNLOAD_DIRECTORY + file.name}`\n"
-                    "**Resp : **`OK - Successfully downloaded...`"
+                    "**Resp : **`OK - Baixado com sucesso...`"
                 )
                 return file.name
         except Exception as e:

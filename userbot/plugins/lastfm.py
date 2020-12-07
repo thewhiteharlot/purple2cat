@@ -73,14 +73,14 @@ async def last_fm(lastFM):
         rectrack = parse.quote(f"{playing}")
         rectrack = sub("^", "https://open.spotify.com/search/", rectrack)
         if image:
-            output = f"[‎]({image})[{LASTFM_USERNAME}]({username}) __is now listening to:__\n\n• [{playing}]({rectrack})\n`{tags}`"
+            output = f"[‎]({image})[{LASTFM_USERNAME}]({username}) __Está ouvindo:__\n\n• [{playing}]({rectrack})\n`{tags}`"
             preview = True
         else:
-            output = f"[{LASTFM_USERNAME}]({username}) __is now listening to:__\n\n• [{playing}]({rectrack})\n`{tags}`"
+            output = f"[{LASTFM_USERNAME}]({username}) __Está ouvindo:__\n\n• [{playing}]({rectrack})\n`{tags}`"
     else:
         recent = User(LASTFM_USERNAME, lastfm).get_recent_tracks(limit=3)
         playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
-        output = f"[{LASTFM_USERNAME}]({username}) __was last listening to:__\n\n"
+        output = f"[{LASTFM_USERNAME}]({username}) __Estava ouvindo:__\n\n"
         for i, track in enumerate(recent):
             print(i)
             printable = await artist_and_song(track)
@@ -147,7 +147,7 @@ async def get_curr_track(lfmbio):
                 try:
                     if BOTLOG and LastLog:
                         await bot.send_message(
-                            BOTLOG_CHATID, f"Attempted to change bio to\n{lfmbio}"
+                            BOTLOG_CHATID, f"Tentando mudar a bio para\n{lfmbio}"
                         )
                     await bot(UpdateProfileRequest(about=lfmbio))
                 except AboutTooLongError:
@@ -158,7 +158,7 @@ async def get_curr_track(lfmbio):
                 await bot(UpdateProfileRequest(about=DEFAULT_BIO))
                 if BOTLOG and LastLog:
                     await bot.send_message(
-                        BOTLOG_CHATID, f"Reset bio back to\n{DEFAULT_BIO}"
+                        BOTLOG_CHATID, f"Bio redefinida para\n{DEFAULT_BIO}"
                     )
         except AttributeError:
             try:
@@ -167,17 +167,17 @@ async def get_curr_track(lfmbio):
                     await bot(UpdateProfileRequest(about=DEFAULT_BIO))
                     if BOTLOG and LastLog:
                         await bot.send_message(
-                            BOTLOG_CHATID, f"Reset bio back to\n{DEFAULT_BIO}"
+                            BOTLOG_CHATID, f"Bio redefinida para\n{DEFAULT_BIO}"
                         )
             except FloodWaitError as err:
                 if BOTLOG and LastLog:
-                    await bot.send_message(BOTLOG_CHATID, f"Error changing bio:\n{err}")
+                    await bot.send_message(BOTLOG_CHATID, f"Erro ao alterar a bio:\n{err}")
         except FloodWaitError as err:
             if BOTLOG and LastLog:
-                await bot.send_message(BOTLOG_CHATID, f"Error changing bio:\n{err}")
+                await bot.send_message(BOTLOG_CHATID, f"Erro ao alterar a bio:\n{err}")
         except WSError as err:
             if BOTLOG and LastLog:
-                await bot.send_message(BOTLOG_CHATID, f"Error changing bio:\n{err}")
+                await bot.send_message(BOTLOG_CHATID, f"Erro ao alterar a bio:\n{err}")
         await sleep(2)
     RUNNING = False
 
@@ -225,10 +225,10 @@ CMD_HELP.update(
     {
         "lastfm": "**Plugin : **`lastfm`\
     \n\n**Syntax : **`.lastfm`\
-    \n**Uso: **Shows currently scrobbling track or most recent scrobbles if nothing is playing.\
+    \n**Uso: **Mostra a faixa de scrobbling atual ou scrobbles mais recentes se nada estiver sendo reproduzido.\
     \n\n**Syntax : **`.lastbio <on/off>`\
-    \n**Uso: **Enables/Disables last.fm current playing to bio.\
+    \n**Uso: **Ativa/desativa a reprodução atual do last.fm em bio.\
     \n\n**Syntax : **`.lastlog <on/off>`\
-    \n**Uso: **Enable/Disable last.fm bio logging in the bot-log group."
+    \n**Uso: **Ativar/desativar o registro bio do last.fm no grupo bot-log."
     }
 )
