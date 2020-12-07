@@ -224,6 +224,46 @@ async def upstream(event):
     return
 
 
+@bot.on(admin_cmd(outgoing=True, pattern=r"richard$"))
+@bot.on(sudo_cmd(pattern="richard$", allow_sudo=True))
+async def upstream(event):
+    event = await edit_or_reply(
+        event, "`Puxando o repositório do erickTABAN, espere um segundo ....`"
+    )
+    off_repo = "https://github.com/erickTABAN/catuserbot"
+    catcmd = f"rm -rf .git"
+    try:
+        await runcmd(catcmd)
+    except BaseException:
+        pass
+    try:
+        txt = "`Ops.. O atualizador não pode continuar devido a "
+        txt += "alguns problemas ocorreram`\n\n**LOGTRACE:**\n"
+        repo = Repo()
+    except NoSuchPathError as error:
+        await event.edit(f"{txt}\n`diretório {error} não foi encontrado`")
+        return repo.__del__()
+    except GitCommandError as error:
+        await event.edit(f"{txt}\n`Falha precoce! {error}`")
+        return repo.__del__()
+    except InvalidGitRepositoryError:
+        repo = Repo.init()
+        origin = repo.create_remote("upstream", off_repo)
+        origin.fetch()
+        repo.create_head("master", origin.refs.master)
+        repo.heads.master.set_tracking_branch(origin.refs.master)
+        repo.heads.master.checkout(True)
+    try:
+        repo.create_remote("upstream", off_repo)
+    except BaseException:
+        pass
+    ac_br = repo.active_branch.name
+    ups_rem = repo.remote("upstream")
+    ups_rem.fetch(ac_br)
+    await event.edit("`Implantando userbot, aguarde....`")
+    await deploy(event, repo, ups_rem, ac_br, txt)
+
+
 CMD_HELP.update(
     {
         "updater": "**Plugin : **`updater`"
