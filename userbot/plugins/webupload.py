@@ -22,7 +22,7 @@ link_regex = re.compile(
 async def labstack(event):
     if event.fwd_from:
         return
-    editor = await edit_or_reply(event, "Processing...")
+    editor = await edit_or_reply(event, "Processando...")
     input_str = event.pattern_match.group(1)
     reply = await event.get_reply_message()
     if input_str:
@@ -155,9 +155,9 @@ CMD_HELP.update(
         "webupload": "__**PLUGIN NAME :** __ `webupload`\
     \n\n**Syntax : **`.webupload` --(`fileio`|`oload`|`anonfiles`|`transfer`|`filebin`|`anonymousfiles`|`vshare`|`bayfiles`) or \
     \n         `.webupload` (path of file) --(`fileio`|`oload`|`anonfiles`|`transfer`|`filebin`|`anonymousfiles`|`vshare`|`bayfiles`)\
-    \n**Usage : **Upload the file to web according to your choice\
-    \n**Example : **`.webupload --anonfiles` tag this to a file\
+    \n**Uso: **Upload the file to web according to your choice\
+    \n**Exemplo : **`.webupload --anonfiles` tag this to a file\
     \n\n**Syntax :** `.labstack` Reply to a media file or provide a directory\
-    \n**Usage : **Upload the file to labstack for 7 days."
+    \n**Uso: **Upload the file to labstack for 7 days."
     }
 )

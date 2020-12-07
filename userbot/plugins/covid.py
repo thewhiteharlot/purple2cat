@@ -63,9 +63,9 @@ CMD_HELP.update(
     {
         "covid": "**Plugin : **`covid`\
         \n\n**Syntax : **`.covid <country name>`\
-        \n**Function :** __Get an information about covid-19 data in the given country.__\
+        \n**Função :** __Get an information about covid-19 data in the given country.__\
         \n\n**Syntax : **`.covid <state name>`\
-        \n**Function :** __Get an information about covid-19 data in the given state of India only.__\
+        \n**Função :** __Get an information about covid-19 data in the given state of India only.__\
         "
     }
 )

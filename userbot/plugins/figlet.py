@@ -50,7 +50,7 @@ CMD_HELP.update(
     {
         "figlet": "**Plugin :**`figlet`\
         \n\n**Syntax : **`.figlet text or .figlet text : type`\
-    \n**Usage : **the types are `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`\
-    \n**Example : **`.figlet hello :digi`"
+    \n**Uso: **the types are `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`\
+    \n**Exemplo : **`.figlet hello :digi`"
     }
 )

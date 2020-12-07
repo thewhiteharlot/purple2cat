@@ -25,9 +25,9 @@ async def lst(event):
     path = Path(cat) if cat else os.getcwd()
     if os.path.isdir(path):
         if cat:
-            msg = "Folders and Files in `{}` :\n".format(path)
+            msg = "Pastas e Arquivos em `{}` :\n".format(path)
         else:
-            msg = "Folders and Files in Current Directory :\n"
+            msg = "Pastas e Arquivos no Diretório atual :\n"
         lists = os.listdir(path)
         files = ""
         folders = ""
@@ -72,11 +72,11 @@ async def lst(event):
         time.ctime(os.path.getctime(path))
         time2 = time.ctime(os.path.getmtime(path))
         time3 = time.ctime(os.path.getatime(path))
-        msg += f"**Location :** `{str(path)}`\n"
+        msg += f"**Localização:** `{str(path)}`\n"
         msg += f"**icon :** `{mode}`\n"
-        msg += f"**Size :** `{humanbytes(size)}`\n"
-        msg += f"**Last Modified Time:** `{time2}`\n"
-        msg += f"**Last Accessed Time:** `{time3}`"
+        msg += f"**Tamanho:** `{humanbytes(size)}`\n"
+        msg += f"**Hora da Última Modificação:** `{time2}`\n"
+        msg += f"**Horário do último acesso:** `{time3}`"
     if len(msg) > Config.MAX_MESSAGE_SIZE_LIMIT:
         with io.BytesIO(str.encode(msg)) as out_file:
             out_file.name = "ls.txt"
@@ -121,14 +121,14 @@ CMD_HELP.update(
         "filemanager": "**Plugin :**`filemanager`\
      \n\nList Files plugin for userbot \
      \n**Syntax :** `.ls`\
-     \n**Usage :** will return files from current working directory\
+     \n**Uso:** will return files from current working directory\
      \n\n**Syntax :** .ls path\
-     \n**Usage :** will return output according to path  \
+     \n**Uso:** will return output according to path  \
      \n\n**Syntax :** .ls file path\
-     \n**Usage :** will return file details\
+     \n**Uso:** will return file details\
      \n\nSimple Module for people who dont wanna use shell executor for listing files.\
      \n\n**Syntax :** `.rem path`\
-     \n**Usage :** To delete the required item from the bot server\
+     \n**Uso:** To delete the required item from the bot server\
 "
     }
 )

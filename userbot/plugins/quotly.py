@@ -83,9 +83,9 @@ CMD_HELP.update(
     {
         "quotly": "**Plugin :** `quotly`\
         \n\n**  •Syntax : **`.q reply to messge`\
-        \n**  •Function : **__Makes your message as sticker quote__\
+        \n**  •Função : **__Makes your message as sticker quote__\
         \n\n**  •Syntax : **`.qbot reply to messge`\
-        \n**  •Function : **__Makes your message as sticker quote by @quotlybot__\
+        \n**  •Função : **__Makes your message as sticker quote by @quotlybot__\
         "
     }
 )

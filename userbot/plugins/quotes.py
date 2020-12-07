@@ -12,7 +12,7 @@ from . import CMD_HELP
 async def quote_search(event):
     if event.fwd_from:
         return
-    catevent = await edit_or_reply(event, "`Processing...`")
+    catevent = await edit_or_reply(event, "`Processando...`")
     input_str = event.pattern_match.group(1)
     if not input_str:
         api_url = "https://quotes.cwprojects.live/random"
@@ -36,7 +36,7 @@ CMD_HELP.update(
     {
         "quotes": "**Plugin : **`quotes`\
     \n\n**Syntax : **`.quote <category>`\
-    \n**Function : **__An api that Fetchs random Quote from `goodreads.com`__\
+    \n**Função : **__An api that Fetchs random Quote from `goodreads.com`__\
     "
     }
 )

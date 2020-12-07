@@ -42,6 +42,6 @@ CMD_HELP.update(
     {
         "ezanvakti": "**Plugin : **`ezanvakti`\
     \n\n**Syntax : **`.ezanvakti <city name>`\
-    \n**Function : **__Shows you the Islamic prayer times of the given city name__"
+    \n**Função : **__Shows you the Islamic prayer times of the given city name__"
     }
 )

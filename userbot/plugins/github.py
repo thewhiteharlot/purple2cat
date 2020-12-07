@@ -36,7 +36,7 @@ async def _(event):
 **Type :** {}
 **Company :** {}
 **Blog :** {}
-**Location :** {}
+**Localização:** {}
 **Bio :** {}
 **Profile Created :** {}""".format(
                 name, html_url, gh_type, company, blog, location, bio, created_at
@@ -64,7 +64,7 @@ async def download(event):
             event, "`Please ADD Proper Github Repo Name of your userbot`"
         )
         return
-    mone = await edit_or_reply(event, "Processing ...")
+    mone = await edit_or_reply(event, "Processando...")
     if not os.path.isdir(GIT_TEMP_DIR):
         os.makedirs(GIT_TEMP_DIR)
     start = datetime.now()
@@ -80,7 +80,7 @@ async def download(event):
         ms = (end - start).seconds
         await event.delete()
         await mone.edit(
-            "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
+            "Baixado para `{}` em {} segundos.".format(downloaded_file_name, ms)
         )
         await mone.edit("Committing to Github....")
         await git_commit(downloaded_file_name, mone)
@@ -128,9 +128,9 @@ CMD_HELP.update(
     {
         "github": "**Plugin : **`github`\
         \n\n**Syntax : **`.github USERNAME`\
-        \n**Function : ** __Get information about an user on GitHub of given username__\
+        \n**Função : ** __Get information about an user on GitHub of given username__\
         \n\n**Syntax : **`.commit reply to python file to upload to github`\
-        \n**Function : **__It uploads the given file to your github repo in **userbot/plugins** folder\
+        \n**Função : **__It uploads the given file to your github repo in **userbot/plugins** folder\
         \nTo work commit plugin set `GITHUB_ACCESS_TOKEN` and `GIT_REPO_NAME` Variables in Heroku vars First__\
     "
     }

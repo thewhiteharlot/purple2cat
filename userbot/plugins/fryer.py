@@ -58,7 +58,7 @@ async def _(event):
     if reply_message.sender.bot:
         event = await edit_or_reply(event, "Reply to actual users message.")
         return
-    event = await edit_or_reply(event, "```Processing```")
+    event = await edit_or_reply(event, "```Processando```")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -177,9 +177,9 @@ async def check_media(reply_message):
 CMD_HELP.update(
     {
         "fryer": "**Syntax :** `.frybot` reply to image or sticker\
-    \n**Usage : **Fries the given sticker or image\
+    \n**Uso: **Fries the given sticker or image\
     \n\n**Syntax : **`.deepfry <1 to 9>` reply to image or sticker\
-    \n**Usage : **Fries the given sticker or image based on level if you dont give anything then it is default to 1\
+    \n**Uso: **Fries the given sticker or image based on level if you dont give anything then it is default to 1\
     "
     }
 )

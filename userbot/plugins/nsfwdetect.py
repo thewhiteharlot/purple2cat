@@ -21,7 +21,7 @@ async def detect(event):
         return await edit_delete(
             event, "`Reply to any image or non animated sticker !`", 5
         )
-    catevent = await edit_or_reply(event, "`Downloading the file to check...`")
+    catevent = await edit_or_reply(event, "`Baixando o arquivo to check...`")
     media = await event.client.download_media(reply)
     if not media.endswith(("png", "jpg", "webp")):
         return await edit_delete(
@@ -61,6 +61,6 @@ CMD_HELP.update(
     {
         "nsfwdetect": "**Plugin : **`nsfwdetect`\
     \n\n  •  **Syntax : **`.detect`\
-    \n  •  **Function : **__Reply .detect command to any image or non animated sticker to detect the nudity in that__"
+    \n  •  **Função : **__Reply .detect command to any image or non animated sticker to detect the nudity in that__"
     }
 )

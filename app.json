@@ -1,7 +1,7 @@
 {
   "name": "Catuserbot",
-  "description": "A telethon userbot based on snapdragon code(xtratgbot) .Easy to use and friendly bot . Maintained by Sandeep ",
-  "logo": "https://telegra.ph/file/3d60313110c58684b31ea.jpg",
+  "description": "Um userbot telethon baseado no código snapdragon (xtratgbot). Fácil de usar e amigável. Mantido por Sandeep e Parcialmente traduzido por xmtscf ",
+  "logo": "https://telegra.ph/file/8ab23be8f70ebf9951212.png",
   "keywords": [
     "telegram",
     "userbot",
@@ -9,80 +9,80 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/sandy1709/catuserbot/",
+  "repository": "https://github.com/xmtscf/catuserbot/",
   "website": "#TODO",
   "success_url": "#TODO",
   "env": {
     "ENV": {
-      "description": "Setting this to ANYTHING will enable heroku.",
+      "description": "Heroku.",
       "value": "ANYTHING"
     },
     "TMP_DOWNLOAD_DIRECTORY": {
-      "description": "Where downloaded files will go.",
-      "value": "./DOWNLOADS/",
+      "description": "Para onde irão os arquivos baixados.",
+      "value": "./d/",
       "required": false
     },
     "ALIVE_NAME": {
-      "description": "give your name",
+      "description": "Seu Nome",
       "value": ""
     },
     "APP_ID": {
-      "description": "Get this value from my.telegram.org! Please do not steal",
+      "description": "Obtenha esse valor em my.telegram.org! Por favor não roube",
       "value": ""
     },
     "API_HASH": {
-      "description": "Get this value from my.telegram.org! Please do not steal",
+      "description": "Obtenha esse valor em my.telegram.org! Por favor não roube",
       "value": ""
     },
     "STRING_SESSION": {
-      "description": "Get this value by running python3 telesetup.py locally",
+      "description": "Obtenha este valor executando python3 telesetup.py localmente",
       "value": ""
     },
     "TG_BOT_USER_NAME_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the username of your bot",
+      "description": "Necessário para o fabricante de botões embutidos. Faça um bot em http://telegram.dog/BotFather e obtenha o nome de usuário do seu bot",
       "value": ""
     },
     "TG_BOT_TOKEN_BF_HER": {
-      "description": "Needed for inline buttons maker. Make a bot at http://telegram.dog/BotFather and get the token of your bot.Worth it. Get it.",
+      "description": "Necessário para o fabricante de botões embutidos. Faça um bot em http://telegram.dog/BotFather e obtenha o token do seu bot. Vale a pena. Pegue.",
       "value": ""
     },
     "HEROKU_API_KEY": {
-      "description": "Required for updating the bot and other stuff get it from https://dashboard.heroku.com/account",
+      "description": "Necessário para atualizar o bot e outras coisas obtidas de https://dashboard.heroku.com/account",
       "value": "",
       "required": false
     },
     "HEROKU_APP_NAME": {
-      "description": "YOUR app name ",
+      "description": "Nome de aplicativo App Name ",
       "value": "",
       "required": false
     },
     "DEFAULT_BIO": {
-      "description": "Your bio here note bio must have only 70characters or less.",
+      "description": "Sua biografia aqui, observe que a biografia deve ter apenas 70 caracteres ou menos.",
       "value": "",
       "required": false
     },    
     "MAX_FLOOD_IN_P_M_s": {
-      "description": "Maximum number of messages a person can send in pm before getting blocked. Value must be an integer. 6 by default.",
+      "description": "Número máximo de mensagens que uma pessoa pode enviar em pm antes de ser bloqueada. O valor deve ser um número inteiro. 6 por padrão.",
       "value": "6",
       "required": false
     },
     "OCR_SPACE_API_KEY": {
-      "description": "Required for OCR functionality. Get from https://ocr.space/ocrapi",
+      "description": "Necessário para a funcionalidade OCR. Obtenha de https://ocr.space/ocrapi",
       "value": "",
       "required": false
     },
     "REM_BG_API_KEY": {
-      "description": "Required for Removing image background functionality. Get from https://www.remove.bg/",
+      "description": "Necessário para remover a funcionalidade de fundo de imagem. Obtenha de https://www.remove.bg/",
       "value": "",
       "required": false
     },
     "ALIVE_PIC": {
-      "description": "the pic that to show in your alive message url.",
+      "description": "O link da foto para mostrar na sua mensagem .alive .",
       "value": "",
       "required": false
     },
     "AUTONAME": {
-      "description": "for .autoname command",
+      "description": "Necessário para o comando .autoname",
       "value": "",
       "required": false
     },
@@ -92,18 +92,18 @@
       "required": false
     },
     "UB_BLACK_LIST_CHAT": {
-      "description": "set blacklist_chats where you do not want userbot features",
-      "value": "-1051754159",
+      "description": "definir blacklist_chats onde você não deseja recursos do userbot",
+      "value": "",
       "required": false
     },
     "DOWNLOAD_PFP_URL_CLOCK": {
-      "description": "Needed for autopic module. A url that is a preview link of your Profile Pic",
+      "description": "Necessário para o módulo de imagem. Link para foto do seu perfil",
       "value": "",
       "required": false
     },
     "TZ": {
-      "description": "Required for Correct Time on autopic/get time. Know your timezone from http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
-      "value": "Asia/Kolkata",
+      "description": "Requerido para a hora correta em autopic/get time. Conheça o seu fuso horário em http://www.timezoneconverter.com/cgi-bin/findzone.tzc",
+      "value": "America/Sao_Paulo",
       "required": false
     }
   },

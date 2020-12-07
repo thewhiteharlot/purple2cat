@@ -36,7 +36,7 @@ CMD_HELP.update(
     {
         "undlt": "**Plugin :** `undlt`\
         \n**Syntax : **`.undlt <count>`\
-        \n**Usage: **Fetches last <count> number of deleted messages and sends you(you must be admin in that group)  \
+        \n**Uso: **Fetches last <count> number of deleted messages and sends you(you must be admin in that group)  \
 "
     }
 )

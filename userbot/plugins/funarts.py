@@ -149,6 +149,6 @@ CMD_HELP.update(
   •  `.lmoon`
   •  `.city`
   
-**Function : **__Just like art plugin this are some other arts__"""
+**Função : **__Just like art plugin this are some other arts__"""
     }
 )

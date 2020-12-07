@@ -105,6 +105,6 @@ CMD_HELP.update(
     {
         "stat": "**Plugin : **`stat`\
     \n\n**Syntax : **`.stat`\
-    \n**Function : **Shows you the count of  your groups, channels, private chats...etc"
+    \n**Função : **Shows you the count of  your groups, channels, private chats...etc"
     }
 )

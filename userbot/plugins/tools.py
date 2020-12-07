@@ -144,7 +144,7 @@ async def _(event):
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await catevent.edit("Created BarCode in {} seconds".format(ms))
+    await catevent.edit("Created BarCode em {} segundos".format(ms))
     await asyncio.sleep(5)
     await catevent.delete()
 
@@ -363,26 +363,26 @@ CMD_HELP.update(
     {
         "tools": "**Plugin : **`tools`\
         \n\n**Syntax : **`.scan` reply to media or file\
-        \n**Function : **__it scans the media or file and checks either any virus is in the file or media__\
+        \n**Função : **__it scans the media or file and checks either any virus is in the file or media__\
         \n\n**Syntax : **`.makeqr` <content>\
-        \n**Function : **__Make a QR Code from the given content.__\
+        \n**Função : **__Make a QR Code from the given content.__\
         \nExample: .makeqr www.google.com\
         \n\n**Syntax : **`.barcode `<content>\
-        \n**Function : **__Make a BarCode from the given content.__\
+        \n**Função : **__Make a BarCode from the given content.__\
         \nExample: `.barcode` www.google.com\
         \n\n**Syntax : **`.decode` <reply to barcode/qrcode> \
-        \n**Function : **__to get decoded content of those codes.__\
+        \n**Função : **__to get decoded content of those codes.__\
         \n\n**Syntax : **`cal year ; month`\
-        \n**Function : **__Shows you the calendar of given month and year__\
+        \n**Função : **__Shows you the calendar of given month and year__\
         \n\n**Syntax : **`.currency` amount (from currency) (to currency)\
-        \n**Function : **__Currency converter for userbot __**Example :** `.currency 10 usd inr`\
+        \n**Função : **__Currency converter for userbot __**Exemplo :** `.currency 10 usd inr`\
         \n\n**Syntax : **`.currencies`\
-        \n**Function : **__Shows you the some list of currencies__\
+        \n**Função : **__Shows you the some list of currencies__\
         \n\n**Syntax : **`.ifsc` <IFSC code>\
-        \n**Function : **__to get details of the relevant bank or branch__**Example :** `.ifsc SBIN0016086`\
+        \n**Função : **__to get details of the relevant bank or branch__**Exemplo :** `.ifsc SBIN0016086`\
         \n\n**Syntax : **`.color` <color_code> \
-        \n**Function : **__sends you a plain image of the color example :__`.color #ff0000`\
+        \n**Função : **__sends you a plain image of the color example :__`.color #ff0000`\
         \n\n**Syntax : **`.xkcd` <query>\
-        \n**Function : **__Searches for the query for the relevant XKCD comic __"
+        \n**Função : **__Searches for the query for the relevant XKCD comic __"
     }
 )

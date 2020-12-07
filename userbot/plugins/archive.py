@@ -41,7 +41,7 @@ async def _(event):
                 reply_message,
                 Config.TMP_DOWNLOAD_DIRECTORY,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
+                    progress(d, t, mone, c_time, "A baixar")
                 ),
             )
             directory_name = downloaded_file_name
@@ -74,7 +74,7 @@ async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    mone = await edit_or_reply(event, "Processing ...")
+    mone = await edit_or_reply(event, "Processando...")
     if input_str:
         path = Path(input_str)
         if os.path.exists(path):
@@ -92,7 +92,7 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             await mone.edit(
-                f"unzipped and stored to `{destination}` \n**Time Taken :** `{ms} seconds`"
+                f"unzipped and stored to `{destination}` \n**Tempo necessário:** `{ms} segundos`"
             )
         else:
             await mone.edit(f"I can't find that path `{input_str}`")
@@ -108,7 +108,7 @@ async def _(event):
                     reply_message,
                     Config.TMP_DOWNLOAD_DIRECTORY,
                     progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        progress(d, t, mone, c_time, "trying to download")
+                        progress(d, t, mone, c_time, "A baixar")
                     ),
                 )
             except Exception as e:
@@ -127,7 +127,7 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             await mone.edit(
-                f"unzipped and stored to `{destination}` \n**Time Taken :** `{ms} seconds`"
+                f"unzipped and stored to `{destination}` \n**Tempo necessário:** `{ms} segundos`"
             )
             os.remove(path)
 
@@ -147,7 +147,7 @@ async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    mone = await edit_or_reply(event, "Processing ...")
+    mone = await edit_or_reply(event, "Processando...")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -158,7 +158,7 @@ async def _(event):
                 reply_message,
                 Config.TMP_DOWNLOAD_DIRECTORY,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
+                    progress(d, t, mone, c_time, "A baixar")
                 ),
             )
             directory_name = downloaded_file_name
@@ -195,7 +195,7 @@ async def _(event):
     if event.fwd_from:
         return
     input_str = event.pattern_match.group(1)
-    mone = await edit_or_reply(event, "Processing ...")
+    mone = await edit_or_reply(event, "Processando...")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -206,7 +206,7 @@ async def _(event):
                 reply_message,
                 Config.TMP_DOWNLOAD_DIRECTORY,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
+                    progress(d, t, mone, c_time, "A baixar")
                 ),
             )
             directory_name = downloaded_file_name
@@ -275,7 +275,7 @@ async def create_archive(input_directory):
 async def _(event):
     if event.fwd_from:
         return
-    mone = await edit_or_reply(event, "Processing ...")
+    mone = await edit_or_reply(event, "Processando...")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -287,7 +287,7 @@ async def _(event):
                 reply_message,
                 Config.TMP_DOWNLOAD_DIRECTORY,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
+                    progress(d, t, mone, c_time, "A baixar")
                 ),
             )
         except Exception as e:
@@ -296,7 +296,7 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             await mone.edit(
-                "Stored the rar to `{}` in {} seconds.".format(downloaded_file_name, ms)
+                "Stored the rar to `{}` em {} segundos.".format(downloaded_file_name, ms)
             )
         patoolib.extract_archive(downloaded_file_name, outdir=extracted)
         filename = sorted(get_lst_of_files(extracted, []))
@@ -341,7 +341,7 @@ async def _(event):
                         reply_to=event.message.id,
                         attributes=document_attributes,
                         progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                            progress(d, t, event, c_time, "trying to upload")
+                            progress(d, t, event, c_time, "A enviar")
                         ),
                     )
                 except Exception as e:
@@ -364,7 +364,7 @@ async def _(event):
 async def _(event):
     if event.fwd_from:
         return
-    mone = await edit_or_reply(event, "Processing ...")
+    mone = await edit_or_reply(event, "Processando...")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     extracted = Config.TMP_DOWNLOAD_DIRECTORY + "extracted/"
@@ -379,7 +379,7 @@ async def _(event):
                 reply_message,
                 Config.TMP_DOWNLOAD_DIRECTORY,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, mone, c_time, "trying to download")
+                    progress(d, t, mone, c_time, "A baixar")
                 ),
             )
         except Exception as e:  # pylint:disable=C0103,W0703
@@ -388,7 +388,7 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             await mone.edit(
-                "Stored the tar to `{}` in {} seconds.".format(downloaded_file_name, ms)
+                "Stored the tar to `{}` em {} segundos.".format(downloaded_file_name, ms)
             )
         with tarfile.TarFile.open(downloaded_file_name, "r") as tar_file:
             tar_file.extractall()
@@ -409,17 +409,17 @@ def get_lst_of_files(input_directory, output_lst):
 CMD_HELP.update(
     {
         "archive": "**Syntax : **`.zip reply to a file/media`\
-    \n**Usage : **it will zip that file/media\
+    \n**Uso: **it will zip that file/media\
     \n\n**Syntax : **`.rar reply to a file/media`\
-    \n**Usage : **it will rar that file/media\
+    \n**Uso: **it will rar that file/media\
     \n\n**Syntax : **`.tar reply to a file/media`\
-    \n**Usage : **it will tar that file/media\
+    \n**Uso: **it will tar that file/media\
     \n\n**Syntax : **`.unzip reply to a .zip file`\
-    \n**Usage : **it will unzip that .zip file\
+    \n**Uso: **it will unzip that .zip file\
     \n\n**Syntax : **`.unrar reply to a .rar file`\
-    \n**Usage : **it will unrar that .rar file\
+    \n**Uso: **it will unrar that .rar file\
     \n\n**Syntax : **`.untar reply to a .tar`\
-    \n**Usage : **it will untar that .tar file\
+    \n**Uso: **it will untar that .tar file\
 "
     }
 )

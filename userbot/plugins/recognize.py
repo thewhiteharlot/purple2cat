@@ -51,7 +51,7 @@ CMD_HELP.update(
     {
         "recognize": "**Plugin : **`recognize`\
         \n\n**Syntax : **`.recognize reply this to any image file`\
-    \n**Function : **__Get information about an image using AWS Rekognition.\
+    \n**Função : **__Get information about an image using AWS Rekognition.\
     \nFind out information including detected labels, faces. text and moderation tags.__"
     }
 )

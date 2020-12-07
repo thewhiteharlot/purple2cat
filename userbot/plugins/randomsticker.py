@@ -133,6 +133,6 @@ CMD_HELP.update(
   •  `.brain`
   •  `.pat`
 
-**Function : **__sends you random stickers of that category__ """
+**Função : **__sends you random stickers of that category__ """
     }
 )

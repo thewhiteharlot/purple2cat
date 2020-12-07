@@ -109,9 +109,9 @@ CMD_HELP.update(
     {
         "evaluators": "**Plugin : **`evaluators`\
         \n\n  •  **Synatax : **`.eval <expr>`:\
-        \n  •  **Function : **__Execute Python script.__\
+        \n  •  **Função : **__Execute Python script.__\
         \n\n  •  **Synatax : **`.exec <command>`:\
-        \n  •  **Function : **__Execute a Terminal command on catuserbot server and shows details.__\
+        \n  •  **Função : **__Execute a Terminal command on catuserbot server and shows details.__\
      "
     }
 )

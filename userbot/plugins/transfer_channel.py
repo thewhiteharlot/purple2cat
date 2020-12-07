@@ -37,7 +37,7 @@ CMD_HELP.update(
     {
         "transfer_channel": "**Plugin :** `transfer_channel`\
         \n**Syntax : **`.otransfer [username to whom you want to transfer]`\
-        \n**Usage: **Transfers ownership to the given username for this set this var `TELE_GRAM_2FA_CODE` in heroku with your 2-step verification code \
+        \n**Uso: **Transfers ownership to the given username for this set this var `TELE_GRAM_2FA_CODE` in heroku with your 2-step verification code \
         "
     }
 )

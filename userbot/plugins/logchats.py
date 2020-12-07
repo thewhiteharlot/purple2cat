@@ -29,16 +29,16 @@ async def monito_p_m_s(event):
                 if NEWPM:
                     if COUNT > 1:
                         await NEWPM.edit(
-                            NEWPM.text.replace("new message", f"{COUNT} messages")
+                            NEWPM.text.replace("nova mensagem", f"{COUNT} mensagens")
                         )
                     else:
                         await NEWPM.edit(
-                            NEWPM.text.replace("new message", f"{COUNT} message")
+                            NEWPM.text.replace("nova mensagem", f"{COUNT} mensagem")
                         )
                     COUNT = 0
                 NEWPM = await event.client.send_message(
                     Config.PM_LOGGR_BOT_API_ID,
-                    f"👤{mentionuser(sender.first_name , sender.id)} has sent a new message \nId : `{chat.id}`",
+                    f"👤{mentionuser(sender.first_name , sender.id)} enviou uma nova mensagem \nId : `{chat.id}`",
                 )
             try:
                 if event.message:
@@ -70,8 +70,8 @@ async def log_tagged_messages(event):
     if not event.is_private:
         await event.client.send_message(
             Config.PM_LOGGR_BOT_API_ID,
-            f"#TAGS \n<b>Group : </b><code>{hmm.title}</code>\
-                        \n<b>Message : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> link</a>",
+            f"#TAGS \n<b>Grupo : </b><code>{hmm.title}</code>\
+                        \n<b>Mensagem : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> link</a>",
             parse_mode="html",
             link_preview=False,
         )
@@ -123,10 +123,10 @@ CMD_HELP.update(
     {
         "logchats": "**Plugin : **`logchats`\
         \n\n  •  **Syntax : **`.save` :\
-        \n  •  **Function : **__Saves tagged message in private group .__\
+        \n  •  **Função : **__Saves tagged message in private group .__\
         \n\n  •  **Syntax : **`.log`:\
-        \n  •  **Function : **__By default will log all private chat messages if you use .nolog and want to log again then you need to use this__\
+        \n  •  **Função : **__By default will log all private chat messages if you use .nolog and want to log again then you need to use this__\
         \n\n  •  **Syntax : **`.nolog`:\
-        \n  •  **Function : **__Stops logging from a private chat or group where you used__"
+        \n  •  **Função : **__Stops logging from a private chat or group where you used__"
     }
 )

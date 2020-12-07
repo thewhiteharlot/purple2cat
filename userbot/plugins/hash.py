@@ -70,7 +70,7 @@ async def endecrypt(event):
                     reply,
                     Config.TMP_DOWNLOAD_DIRECTORY,
                     progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        progress(d, t, catevent, c_time, "trying to download")
+                        progress(d, t, catevent, c_time, "A baixar")
                     ),
                 )
                 catevent = await edit_or_reply(event, "`Encoding ...`")
@@ -93,8 +93,8 @@ CMD_HELP.update(
     {
         "hash": "**Plugin : **`hash`\
         \n\n**Syntax : **`.hbase en toencode-text or .hbase de encoded-text`\
-        \n**Function : **__Find the base64 encoding of the given string or decoding of string__\
+        \n**Função : **__Find the base64 encoding of the given string or decoding of string__\
         \n\n**Syntax : **`.hash text`\
-        \n**Function : **__Find the md5, sha1, sha256, sha512 of the string when written into a txt file.__"
+        \n**Função : **__Find the md5, sha1, sha256, sha512 of the string when written into a txt file.__"
     }
 )

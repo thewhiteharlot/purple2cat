@@ -46,7 +46,7 @@ CMD_HELP.update(
         "invite": """**Plugin : **`invite`
 
   •  **Syntax : **`.invite username(s)/userid(s)`
-  •  **Function : **__Add the given user/users to the group where u used the command__
+  •  **Função : **__Add the given user/users to the group where u used the command__
 """
     }
 )

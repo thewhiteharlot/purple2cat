@@ -18,7 +18,7 @@ async def _(event):
         await edit_or_reply(event, "```Reply to a Link```")
         return
     chat = "@chotamreaderbot"
-    catevent = await edit_or_reply(event, "```Processing```")
+    catevent = await edit_or_reply(event, "```Processando```")
     async with event.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(
@@ -43,6 +43,6 @@ CMD_HELP.update(
     {
         "linkpreview": "**Plugin : **`linkpreview`\
     \n\n**Syntax : **`.ctg` reply to link\
-    \n**Function : **Converts the given link to link preview"
+    \n**Função : **Converts the given link to link preview"
     }
 )

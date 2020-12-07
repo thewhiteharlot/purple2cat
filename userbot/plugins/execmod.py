@@ -375,27 +375,27 @@ CMD_HELP.update(
     {
         "execmod": "**Plugin : **`execmod`\
     \n\n**Syntax :** `.pips query`\
-    \n**Usage : **Searches your pip modules\
+    \n**Uso: **Searches your pip modules\
     \n\n**Syntax : **`.sucide`\
-    \n**Usage : **Deletes all your folders and files in the bot\
+    \n**Uso: **Deletes all your folders and files in the bot\
     \n\n**Syntax : **`.plugins`\
-    \n**Usage : **Shows you the list of modules that are in bot\
+    \n**Uso: **Shows you the list of modules that are in bot\
     \n\n**Syntax : **`.date`\
-    \n**Usage : **Shows you the date of today\
+    \n**Uso: **Shows you the date of today\
     \n\n**Syntax : **`.env`\
-    \n**Usage : **Shows you the list of all your heroku vars\
+    \n**Uso: **Shows you the list of all your heroku vars\
     \n\n**Syntax : **`.fast`\
-    \n**Usage : **speed calculator\
+    \n**Uso: **speed calculator\
     \n\n**Syntax : **`.fortune`\
-    \n**Usage : **Fortune teller\
+    \n**Uso: **Fortune teller\
     \n\n**Syntax : **`.qquote`\
-    \n**Usage : **Random quote generator\
+    \n**Uso: **Random quote generator\
     \n\n**Syntax : **`.fakeid`\
-    \n**Usage : **Random fakeid generator\
+    \n**Uso: **Random fakeid generator\
     \n\n**Syntax : **`.kwot`\
-    \n**Usage : **An awesome random quote generator.\
+    \n**Uso: **An awesome random quote generator.\
     \n\n**Syntax : **`.qpro`\
-    \n**Usage : **Programming Quotes\
+    \n**Uso: **Programming Quotes\
     "
     }
 )

@@ -351,28 +351,28 @@ CMD_HELP.update(
         "broadcast": """**Plugin : ** `broadcast`
 
   •  **Syntax : **`.sendto category_name`
-  •  **Function : **__will send the replied message to all the chats in give category__
+  •  **Função : **__will send the replied message to all the chats in give category__
 
   •  **Syntax : **`.fwdto category_name`
-  •  **Function : **__will forward the replied message to all the chats in give category__
+  •  **Função : **__will forward the replied message to all the chats in give category__
 
   •  **Syntax : **`.addto category_name`
-  •  **Function : **__It will add this chat/user/channel to the category of the given name__
+  •  **Função : **__It will add this chat/user/channel to the category of the given name__
 
   •  **Syntax : **`.rmfrom category_name`
-  •  **Function : **__To remove the Chat/user/channel from the given category name__
+  •  **Função : **__To remove the Chat/user/channel from the given category name__
 
   •  **Syntax : **`.list category_name`
-  •  **Function : **__Will show the list of all chats in the given category__
+  •  **Função : **__Will show the list of all chats in the given category__
 
   •  **Syntax : **`.listall`
-  •  **Function : **__Will show the list of all category names__
+  •  **Função : **__Will show the list of all category names__
 
   •  **Syntax : **`.frmfrom category_name chat_id`
-  •  **Function : **__To force remove the given chat_id from the given category name usefull when you left that chat or banned you there__
+  •  **Função : **__To force remove the given chat_id from the given category name usefull when you left that chat or banned you there__
 
   •  **Syntax : **`delc category_name`
-  •  **Function : **__Deletes the category completely in database__
+  •  **Função : **__Deletes the category completely in database__
 """
     }
 )

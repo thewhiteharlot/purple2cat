@@ -45,7 +45,7 @@ async def _(event):
         chatdata = await event.client.get_entity(entity)
     except Exception as e:
         return await edit_delete(
-            event, f"<b>Error : </b><code>{str(e)}</code>", time=5, parse_mode="HTML"
+            event, f"<b>Erro: </b><code>{str(e)}</code>", time=5, parse_mode="HTML"
         )
     if type(chatdata).__name__ == "Channel":
         if chatdata.username:
@@ -109,7 +109,7 @@ async def _(event):
                     \nRuntime per file :   | {avgruntime}\
                     \n</code>"
     line = "<code>+--------------------+-----------+</code>\n"
-    result = f"<b>Group : {link}</b>\n\n"
+    result = f"<b>Grupo : {link}</b>\n\n"
     result += f"<code>Total Messages: {msg_count}</code>\n"
     result += "<b>File Summary : </b>\n"
     result += f"<code>{str(x)}</code>\n"
@@ -153,13 +153,13 @@ async def _(event):
         chatdata = await event.client.get_entity(entity)
     except Exception as e:
         return await edit_delete(
-            event, f"<b>Error : </b><code>{str(e)}</code>", 5, parse_mode="HTML"
+            event, f"<b>Erro: </b><code>{str(e)}</code>", 5, parse_mode="HTML"
         )
     try:
         userdata = await event.client.get_entity(userentity)
     except Exception as e:
         return await edit_delete(
-            event, f"<b>Error : </b><code>{str(e)}</code>", time=5, parse_mode="HTML"
+            event, f"<b>Erro: </b><code>{str(e)}</code>", time=5, parse_mode="HTML"
         )
     if type(chatdata).__name__ == "Channel":
         if chatdata.username:
@@ -226,7 +226,7 @@ async def _(event):
                     \nRuntime per file :   | {avgruntime}\
                     \n</code>"
     line = "<code>+--------------------+-----------+</code>\n"
-    result = f"<b>Group : {link}\nUser : {htmlmentionuser(userdata.first_name,userdata.id)}\n\n"
+    result = f"<b>Grupo : {link}\nUser : {htmlmentionuser(userdata.first_name,userdata.id)}\n\n"
     result += f"<code>Total Messages: {msg_count}</code>\n"
     result += "<b>File Summary : </b>\n"
     result += f"<code>{str(x)}</code>\n"
@@ -242,14 +242,14 @@ CMD_HELP.update(
 **Syntax : **
   •  `.chatfs`
   •  `.chatfs username/id`
-**Function : **
+**Função : **
   •  __Shows you the complete media/file summary of the that group__
 
 **Syntax : **
   •  `.userfs reply`
   •  `.userfs chat username/id`
   •  `.userfs user username/id`
-**Function : **
+**Função : **
   •  __Shows you the complete media/file summary of the that User in the group where you want__
 """
     }

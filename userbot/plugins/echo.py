@@ -113,11 +113,11 @@ async def samereply(cat):
 CMD_HELP.update(
     {
         "echo": "**Syntax :** `.addecho` reply to user to whom you want to enable\
-    \n**Usage : **replays his every message for whom you enabled echo\
+    \n**Uso: **replays his every message for whom you enabled echo\
     \n\n**Syntax : **`.rmecho` reply to user to whom you want to stop\
-    \n**Usage : **Stops replaying his messages\
+    \n**Uso: **Stops replaying his messages\
     \n\n**Syntax : **`.listecho`\
-    \n**Usage : **shows the list of users for whom you enabled echo\
+    \n**Uso: **shows the list of users for whom you enabled echo\
     "
     }
 )

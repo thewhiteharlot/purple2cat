@@ -109,7 +109,7 @@ CMD_HELP.update(
   •  `.gm`
   •  `.gnoon`
   •  `.gn`  
-**Function : **__sends you random good morning , afternoon and night quotes respectively.__
+**Função : **__sends you random good morning , afternoon and night quotes respectively.__
 
 **Syntax : **
   •  `.gnt`
@@ -119,6 +119,6 @@ CMD_HELP.update(
   •  `.getwell`
   •  `.luck`
   •  `.sprinkle`
-**Function : **__shows you some text arts for these greeting commands.__"""
+**Função : **__shows you some text arts for these greeting commands.__"""
     }
 )

@@ -8,7 +8,7 @@ from . import ALIVE_NAME, CMD_HELP, StartTime, catdef, catversion, mention, repl
 
 DEFAULTUSER = ALIVE_NAME or "cat"
 CAT_IMG = Config.ALIVE_PIC
-CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ MY BOT IS RUNNING SUCCESFULLY ✮"
+CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ FUNCIONANDO NORMALMENTE ✮"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✥ "
 
 
@@ -23,11 +23,11 @@ async def amireallyalive(alive):
     if CAT_IMG:
         cat_caption = f"**{CUSTOM_ALIVE_TEXT}**\n\n"
         cat_caption += f"**{EMOJI} Database :** `{check_sgnirts}`\n"
-        cat_caption += f"**{EMOJI} Telethon version :** `{version.__version__}\n`"
-        cat_caption += f"**{EMOJI} Catuserbot Version :** `{catversion}`\n"
-        cat_caption += f"**{EMOJI} Python Version :** `{python_version()}\n`"
+        cat_caption += f"**{EMOJI} Versão Telethon:** `{version.__version__}\n`"
+        cat_caption += f"**{EMOJI} Versão Catuserbot :** `{catversion}`\n"
+        cat_caption += f"**{EMOJI} Versão Python :** `{python_version()}\n`"
         cat_caption += f"**{EMOJI} Uptime :** `{uptime}\n`"
-        cat_caption += f"**{EMOJI} Master:** {mention}\n"
+        cat_caption += f"**{EMOJI} Dono:** {mention}\n"
         await alive.client.send_file(
             alive.chat_id, CAT_IMG, caption=cat_caption, reply_to=reply_to_id
         )
@@ -37,11 +37,11 @@ async def amireallyalive(alive):
             alive,
             f"**{CUSTOM_ALIVE_TEXT}**\n\n"
             f"**{EMOJI} Database :** `{check_sgnirts}`\n"
-            f"**{EMOJI} Telethon Version :** `{version.__version__}\n`"
-            f"**{EMOJI} Catuserbot Version :** `{catversion}`\n"
-            f"**{EMOJI} Python Version :** `{python_version()}\n`"
+            f"**{EMOJI} Versão Telethon :** `{version.__version__}\n`"
+            f"**{EMOJI} Versão Catuserbot :** `{catversion}`\n"
+            f"**{EMOJI} Versão Python :** `{python_version()}\n`"
             f"**{EMOJI} Uptime :** `{uptime}\n`"
-            f"**{EMOJI} Master:** {mention}\n",
+            f"**{EMOJI} Dono:** {mention}\n",
         )
 
 
@@ -52,11 +52,11 @@ async def amireallyalive(alive):
         return
     tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
     reply_to_id = await reply_id(alive)
-    cat_caption = f"**Catuserbot is Up and Running**\n"
-    cat_caption += f"**  -Telethon version :** `{version.__version__}\n`"
-    cat_caption += f"**  -Catuserbot Version :** `{catversion}`\n"
-    cat_caption += f"**  -Python Version :** `{python_version()}\n`"
-    cat_caption += f"**  -Master:** {mention}\n"
+    cat_caption = f"**Catuserbot esta instalado e funcionando**\n"
+    cat_caption += f"**  -Versao Telethon:** `{version.__version__}\n`"
+    cat_caption += f"**  -Versao Catuserbot :** `{catversion}`\n"
+    cat_caption += f"**  -Versao Python :** `{python_version()}\n`"
+    cat_caption += f"**  -Dono:** {mention}\n"
     results = await bot.inline_query(tgbotusername, cat_caption)  # pylint:disable=E0602
     await results[0].click(alive.chat_id, reply_to=reply_to_id, hide_via=True)
     await alive.delete()
@@ -76,7 +76,7 @@ async def amireallyalive(alive):
 def check_data_base_heal_th():
     # https://stackoverflow.com/a/41961968
     is_database_working = False
-    output = "No Database is set"
+    output = "Nenhum banco de dados está definido"
     if not Config.DB_URI:
         return is_database_working, output
     from userbot.plugins.sql_helper import SESSION
@@ -88,7 +88,7 @@ def check_data_base_heal_th():
         output = f"❌ {str(e)}"
         is_database_working = False
     else:
-        output = "Functioning Normally"
+        output = "OK"
         is_database_working = True
     return is_database_working, output
 
@@ -97,9 +97,9 @@ CMD_HELP.update(
     {
         "alive": "**Plugin :** `alive`\
       \n\n  •  **Syntax : **`.alive` \
-      \n  •  **Function : **__status of bot will be showed__\
+      \n  •  **Função : **__status of bot will be showed__\
       \n\n  •  **Syntax : **`.ialive` \
-      \n  •  **Function : **__inline status of bot will be shown.__\
+      \n  •  **Função : **__inline status of bot will be shown.__\
       \nSet `ALIVE_PIC` var for media in alive message"
     }
 )

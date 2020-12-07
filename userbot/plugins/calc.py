@@ -50,6 +50,6 @@ CMD_HELP.update(
     {
         "calc": "**Plugin : **`calc`\
         \n\n**Syntax : **`.calc expression` \
-        \n**Function : **solves the given maths equation by BODMAS rule. "
+        \n**Função : **solves the given maths equation by BODMAS rule. "
     }
 )

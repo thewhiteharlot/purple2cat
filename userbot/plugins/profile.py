@@ -128,7 +128,7 @@ async def count(event):
     bc = 0
     b = 0
     result = ""
-    await event.edit("`Processing..`")
+    await event.edit("`Processando...`")
     dialogs = await bot.get_dialogs(limit=None, ignore_migrated=True)
     for d in dialogs:
         currrent_entity = d.entity
@@ -195,18 +195,18 @@ async def _(event):
 CMD_HELP.update(
     {
         "profile": ".username <new_username>\
-\nUsage: Changes your Telegram username.\
+\nUso: Changes your Telegram username.\
 \n\n.pname <firstname> or .pname <firstname> <lastname>\
-\nUsage: Changes your Telegram name.(First and last name will get split by the first space)\
+\nUso: Changes your Telegram name.(First and last name will get split by the first space)\
 \n\n.setpfp or .ppic\
-\nUsage: Reply with .setpfp or .ppic to an image to change your Telegram profie picture.\
+\nUso: Reply with .setpfp or .ppic to an image to change your Telegram profie picture.\
 \n\n.pbio <new_bio>\
-\nUsage: Changes your Telegram bio.\
+\nUso: Changes your Telegram bio.\
 \n\n.delpfp or .delpfp <number>/<all>\
-\nUsage: Deletes your Telegram profile picture(s).\
+\nUso: Deletes your Telegram profile picture(s).\
 \n\n.myusernames\
-\nUsage: Shows usernames of your created channels and groups \
+\nUso: Shows usernames of your created channels and groups \
 \n\n.count\
-\nUsage: Counts your groups, chats, bots etc..."
+\nUso: Counts your groups, chats, bots etc..."
     }
 )

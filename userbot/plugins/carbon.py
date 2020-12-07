@@ -23,7 +23,7 @@ LANG = "en"
 @bot.on(sudo_cmd(pattern="carbon(?: |$)(.*)", allow_sudo=True))
 async def carbon_api(e):
     """ A Wrapper for carbon.now.sh """
-    await e.edit("`Processing..`")
+    await e.edit("`Processando...`")
     CARBON = "https://carbon.now.sh/?l={lang}&code={code}"
     textx = await e.get_reply_message()
     pcode = e.text
@@ -62,12 +62,12 @@ async def carbon_api(e):
     driver.find_element_by_xpath("//button[contains(text(),'Export')]").click()
     # driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
     # driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-    await cat.edit("`Processing..\n75%`")
+    await cat.edit("`Processando...\n75%`")
     # Waiting for downloading
     await asyncio.sleep(2)
     await cat.edit("`Done Dana Done...\n100%`")
     file = "./carbon.png"
-    await cat.edit("`Uploading..`")
+    await cat.edit("`A enviar`")
     await e.client.send_file(
         e.chat_id,
         file,
@@ -84,7 +84,7 @@ async def carbon_api(e):
 @bot.on(admin_cmd(outgoing=True, pattern="krb"))
 @bot.on(sudo_cmd(pattern="krb", allow_sudo=True))
 async def carbon_api(e):
-    cat = await edit_or_reply(e, "`Processing....`")
+    cat = await edit_or_reply(e, "`Processando....`")
     CARBON = "https://carbon.now.sh/?l={lang}&code={code}"
     textx = await e.get_reply_message()
     pcode = e.text
@@ -142,7 +142,7 @@ async def carbon_api(e):
     driver.find_element_by_id("export-menu").click()
     driver.find_element_by_xpath("//button[contains(text(),'4x')]").click()
     driver.find_element_by_xpath("//button[contains(text(),'PNG')]").click()
-    await cat.edit("`Processing..\n75%`")
+    await cat.edit("`Processando...\n75%`")
     # Waiting for downloading
     await asyncio.sleep(2.5)
     color_name = driver.find_element_by_xpath(
@@ -150,7 +150,7 @@ async def carbon_api(e):
     ).get_attribute("value")
     await cat.edit("`Done Dana Done...\n100%`")
     file = "./carbon.png"
-    await cat.edit("`Uploading..`")
+    await cat.edit("`A enviar`")
     await e.client.send_file(
         e.chat_id,
         file,
@@ -582,7 +582,7 @@ CMD_HELP.update(
     \n  •  `.kar4 <reply to code>`\
     \n  •  `.rgbk2 <reply to code>`\
     \n  •  `.kargb <reply to code>`\
-    \n\n**Function : **\
+    \n\n**Função : **\
     \n__Carbon generators, each command has one style of carbon (krb ,kargb shows random carbons, remaining all are fixed)__\
     "
     }

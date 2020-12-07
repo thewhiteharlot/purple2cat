@@ -29,7 +29,7 @@ async def fastpurger(purg):
     else:
         await edit_or_reply(
             purg,
-            "`No message specified.`",
+            "`Nenhuma mensagem especificada.`",
         )
         return
 
@@ -37,13 +37,13 @@ async def fastpurger(purg):
         await purg.client.delete_messages(chat, msgs)
     done = await purg.client.send_message(
         purg.chat_id,
-        "Fast purge complete!\nPurged " + str(count) + " messages.",
+        "Mensagens apagadas!\nForam apagadas " + str(count) + " mensagens.",
     )
 
     if BOTLOG:
         await purg.client.send_message(
             BOTLOG_CHATID,
-            "#PURGE \nPurge of " + str(count) + " messages done successfully.",
+            "#PURGE \nForam apagadas " + str(count) + " mensagens sem erros.",
         )
     await sleep(2)
     await done.delete()
@@ -66,12 +66,12 @@ async def purgeme(delme):
 
     smsg = await delme.client.send_message(
         delme.chat_id,
-        "`Purge complete!` Purged " + str(count) + " messages.",
+        "`Mensagens apagadas!` Foram apagadas " + str(count) + " mensagens.",
     )
     if BOTLOG:
         await delme.client.send_message(
             BOTLOG_CHATID,
-            "#PURGEME \nPurge of " + str(count) + " messages done successfully.",
+            "#PURGEME \nForam apagadas " + str(count) + " mensagens sem erros.",
         )
     await sleep(2)
     i = 1
@@ -82,7 +82,7 @@ async def purgeme(delme):
 @bot.on(sudo_cmd(allow_sudo=True, pattern="del$"))
 @errors_handler
 async def delete_it(delme):
-    """ For .del command, delete the replied message. """
+    """ O comando .del, exclui a mensagem respondida. """
     msg_src = await delme.get_reply_message()
     if delme.reply_to_msg_id:
         try:
@@ -90,23 +90,23 @@ async def delete_it(delme):
             await delme.delete()
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "#DEL \nDeletion of message was successful"
+                    BOTLOG_CHATID, "#DEL \nA exclusão da mensagem foi bem sucedida"
                 )
         except rpcbaseerrors.BadRequestError:
             if BOTLOG:
                 await delme.client.send_message(
-                    BOTLOG_CHATID, "Well, I can't delete a message"
+                    BOTLOG_CHATID, "Bem, eu não posso deletar essa mensagem"
                 )
 
 
 CMD_HELP.update(
     {
         "purge": "**Plugin : **`purge`\
-        \n\n**Syntax : **`.purge reply to message to start purge from there`\
-        \n**Function : **__Purges all messages starting from the reply.__\
+        \n\n**Syntax : **`.purge responda a mensagem para começar a apagar a partir dela`\
+        \n**Função : **__Limpa todas as mensagens a partir da respondida.__\
         \n\n**Syntax : **`.purgeme <x>`\
-        \n**Function : **__Deletes x amount of your latest messages.__\
-        \n\n**Syntax : **`.del reply to message to delete`\
-        \n**Function : **__Deletes the message you replied to.__"
+        \n**Função : **__Exclui x quantidade de suas mensagens mais recentes.__\
+        \n\n**Syntax : **`.del responda a mensagem para deletar`\
+        \n**Função : **__Exclui a mensagem que você respondeu.__"
     }
 )

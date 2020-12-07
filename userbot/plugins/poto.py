@@ -97,7 +97,7 @@ CMD_HELP.update(
         "poto": """**Plugin : **`poto`
 
   •  **Syntax : **`.poto`
-  •  **Function : **__reply to user to get his profile pic use command along \
+  •  **Função : **__reply to user to get his profile pic use command along \
 with profile pic number to get desired pic else use .poto all to get all if you dont reply then gets group pics__"""
     }
 )

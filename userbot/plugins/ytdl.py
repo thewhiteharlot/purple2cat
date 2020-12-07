@@ -76,7 +76,7 @@ async def download_video(v_url):
         song = False
         video = True
     try:
-        await v_url.edit("`Fetching data, please wait..`")
+        await v_url.edit("`Buscando dados, por favor aguarde ..`")
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url)
     except DownloadError as DE:
@@ -135,7 +135,7 @@ async def download_video(v_url):
             ],
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(
-                    d, t, v_url, c_time, "Uploading..", f"{ytdl_data['title']}.mp3"
+                    d, t, v_url, c_time, "A enviar", f"{ytdl_data['title']}.mp3"
                 )
             ),
         )
@@ -154,7 +154,7 @@ async def download_video(v_url):
             caption=ytdl_data["title"],
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                 progress(
-                    d, t, v_url, c_time, "Uploading..", f"{ytdl_data['title']}.mp4"
+                    d, t, v_url, c_time, "A enviar", f"{ytdl_data['title']}.mp4"
                 )
             ),
         )
@@ -176,7 +176,7 @@ async def yt_search(video_q):
             "`Error: YouTube API key missing! Add it to reveal config vars in heroku or userbot/uniborgConfig.py in github fork.`",
         )
         return
-    video_q = await edit_or_reply(video_q, "```Processing...```")
+    video_q = await edit_or_reply(video_q, "```Processando...```")
     full_response = await youtube_search(query)
     videos_json = full_response[1]
     for video in videos_json:
@@ -260,7 +260,7 @@ async def kakashi(event):
         end = datetime.now()
         ms = (end - start).seconds
         await cat.edit(
-            f"<b><i>➥ Video uploaded in {ms} seconds.</i></b>\n<b><i>➥ Uploaded by :- {hmention}</i></b>",
+            f"<b><i>➥ Vídeo enviado em {ms} segundos.</i></b>\n<b><i>➥ Enviado por :- {hmention}</i></b>",
             parse_mode="html",
         )
     await event.client.delete_messages(
@@ -272,13 +272,13 @@ CMD_HELP.update(
     {
         "ytdl": "**Plugin :** `ytdl`\
     \n\n  •  **Syntax :** `.yta link`\
-    \n  •  **Function : **__downloads the audio from the given link(Suports the all sites which support youtube-dl)__\
+    \n  •  **Função : **__downloads the audio from the given link(Suports the all sites which support youtube-dl)__\
     \n\n  •  **Syntax : **`.ytv link`\
-    \n  •  **Function : **__downloads the video from the given link(Suports the all sites which support youtube-dl)__\
+    \n  •  **Função : **__downloads the video from the given link(Suports the all sites which support youtube-dl)__\
     \n\n  •  **Syntax : **`.yts query`\
-    \n  •  **Function : **__Fetches youtube results you need api token for this__\
+    \n  •  **Função : **__Fetches youtube results you need api token for this__\
     \n\n  •  **Syntax : **`.insta` <link>\
-    \n  •  **Function : **__Downloads the video from the given instagram link__\
+    \n  •  **Função : **__Downloads the video from the given instagram link__\
     "
     }
 )

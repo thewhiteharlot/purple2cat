@@ -25,7 +25,7 @@ async def _(catbot):
     if reply_message.sender.bot:
         await edit_or_reply(catbot, "```Reply to actual users message.```")
         return
-    event = await catbot.edit("```Processing```")
+    event = await catbot.edit("```Processando```")
     async with catbot.client.conversation(chat) as conv:
         try:
             response = conv.wait_event(

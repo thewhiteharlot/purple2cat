@@ -31,7 +31,7 @@ async def kakashi(magisk):
         "⦁ **Beta**": magisk_repo + "master/beta.json",
         "⦁ **Canary**": magisk_repo + "canary/canary.json",
     }
-    releases = "**Latest Magisk Releases**\n\n"
+    releases = "**Últimos lançamentos da Magisk**\n\n"
     for name, release_url in magisk_dict.items():
         data = get(release_url).json()
         if "canary" in release_url:
@@ -62,7 +62,7 @@ async def device_info(request):
     elif textx:
         codename = textx.text
     else:
-        await edit_or_reply(request, "`Usage: .device <codename> / <model>`")
+        await edit_or_reply(request, "`Uso: .device <codename> / <model>`")
         return
     data = json.loads(
         get(
@@ -72,15 +72,15 @@ async def device_info(request):
     )
     results = data.get(codename)
     if results:
-        reply = f"**Search results for {codename}**:\n\n"
+        reply = f"**Resultados da busca por {codename}**:\n\n"
         for item in results:
             reply += (
-                f"**Brand**: {item['brand']}\n"
-                f"**Name**: {item['name']}\n"
-                f"**Model**: {item['model']}\n\n"
+                f"**Marca**: {item['brand']}\n"
+                f"**Nome**: {item['name']}\n"
+                f"**Modelo**: {item['model']}\n\n"
             )
     else:
-        reply = f"`Couldn't find info about {codename}!`\n"
+        reply = f"`Não foi possível encontrar informações sobre {codename}!`\n"
     await edit_or_reply(request, reply)
 
 
@@ -100,7 +100,7 @@ async def codename_info(request):
         brand = textx.text.split(" ")[0]
         device = " ".join(textx.text.split(" ")[1:])
     else:
-        await edit_or_reply(request, "`Usage: .codename <brand> <device>`")
+        await edit_or_reply(request, "`Uso: .codename <brand> <device>`")
         return
 
     data = json.loads(
@@ -117,17 +117,17 @@ async def codename_info(request):
         if i["name"].lower() == device.lower() or i["model"].lower() == device.lower()
     ]
     if results:
-        reply = f"**Search results for {brand} {device}**:\n\n"
+        reply = f"**Resultados da busca por {brand} {device}**:\n\n"
         if len(results) > 8:
             results = results[:8]
         for item in results:
             reply += (
-                f"**Device**: {item['device']}\n"
-                f"**Name**: {item['name']}\n"
-                f"**Model**: {item['model']}\n\n"
+                f"**Dispositivo**: {item['device']}\n"
+                f"**Nome**: {item['name']}\n"
+                f"**Modelo**: {item['model']}\n\n"
             )
     else:
-        reply = f"`Couldn't find {device} codename!`\n"
+        reply = f"`Não consegui encontrar {device} codename!`\n"
     await edit_or_reply(request, reply)
 
 
@@ -146,7 +146,7 @@ async def devices_specifications(request):
         brand = textx.text.split(" ")[0]
         device = " ".join(textx.text.split(" ")[1:])
     else:
-        await edit_or_reply(request, "`Usage: .specs <brand> <device>`")
+        await edit_or_reply(request, "`Uso: .specs <brand> <device>`")
         return
     all_brands = (
         BeautifulSoup(
@@ -209,7 +209,7 @@ async def twrp(request):
     elif textx:
         device = textx.text.split(" ")[0]
     else:
-        await edit_or_reply(request, "`Usage: .twrp <codename>`")
+        await edit_or_reply(request, "`Uso: .twrp <codename>`")
         return
     url = get(f"https://dl.twrp.me/{device}/")
     if url.status_code == 404:
@@ -234,14 +234,14 @@ CMD_HELP.update(
     {
         "android": "**Plugin : **`android`\
 \n\n  •  **Syntax : **`.magisk`\
-\n  •  **Function :** __Get latest Magisk releases__\
+\n  •  **Função :** __Get latest Magisk releases__\
 \n\n  •  **Syntax : **`.device <codename>`\
-\n  •  **Function :** __Get info about android device codename or model.__\
+\n  •  **Função :** __Get info about android device codename or model.__\
 \n\n  •  **Syntax : **`.codename <brand> <device>`\
-\n  •  **Function :** __Search for android device codename.__\
+\n  •  **Função :** __Search for android device codename.__\
 \n\n  •  **Syntax : **`.specs <brand> <device>`\
-\n  •  **Function :** __Get device specifications info.__\
+\n  •  **Função :** __Get device specifications info.__\
 \n\n  •  **Syntax : **`.twrp <codename>`\
-\n  •  **Function : **__Get latest twrp download for android device.__"
+\n  •  **Função : **__Get latest twrp download for android device.__"
     }
 )

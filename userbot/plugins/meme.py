@@ -236,11 +236,11 @@ CMD_HELP.update(
         \n\n**Functions :**\
         \n__The above two commands are animation memes meme by default takes ✈️ and give by default takes 🍭__\
         \n\n**Syntax : **`.repeat count message`\
-        \n**Function : **try out and check Yourself `.repeat 5 hello`\
+        \n**Função : **try out and check Yourself `.repeat 5 hello`\
         \n\n**Syntax :** `.type`\
-        \n**Function : **Just a small command to make your keyboard become a typewriter!\
+        \n**Função : **Just a small command to make your keyboard become a typewriter!\
         \n\n**Syntax :** `.sadmin`\
-        \n**Function : **Fun animation of @admin!\
+        \n**Função : **Fun animation of @admin!\
         "
     }
 )

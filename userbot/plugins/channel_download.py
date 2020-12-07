@@ -36,7 +36,7 @@ async def get_media(event):
             await event.client.download_media(msg, tempdir)
             i += 1
             await event.edit(
-                f"Downloading Media From this Channel.\n **DOWNLOADED : **`{i}`"
+                f"Downloading Media From this Channel B.\n **DOWNLOADED : **`{i}`"
             )
     ps = subprocess.Popen(("ls", tempdir), stdout=subprocess.PIPE)
     output = subprocess.check_output(("wc", "-l"), stdin=ps.stdout)
@@ -86,11 +86,11 @@ CMD_HELP.update(
 **Telegram Channel Media Downloader Plugin for userbot.**
 
   • **Syntax : **`.geta channel_username` 
-  • **Function : **__will  download all media from channel into your bot server but there is limit of 3000 to prevent API limits.__
+  • **Função : **__will  download all media from channel into your bot server but there is limit of 3000 to prevent API limits.__
   
   • **Syntax : **`.getc number channel_username` 
-  • **Function : **__will  download latest given number of media from channel into your bot server .__
+  • **Função : **__will  download latest given number of media from channel into your bot server .__
   
-**Note : **__The downloaded media files will be at__ `.ls {location}`"""
+**Observação : **__The downloaded media files will be at__ `.ls {location}`"""
     }
 )

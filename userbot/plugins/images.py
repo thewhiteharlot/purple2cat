@@ -27,7 +27,7 @@ async def img_sampler(event):
         return await edit_or_reply(
             event, "Reply to a message or pass a query to search!"
         )
-    cat = await edit_or_reply(event, "`Processing...`")
+    cat = await edit_or_reply(event, "`Processando...`")
     if event.pattern_match.group(1) != "":
         lim = int(event.pattern_match.group(1))
         if lim > 10:
@@ -61,6 +61,6 @@ CMD_HELP.update(
     {
         "images": "**Plugin :**`images`\
 \n\n**Syntax :** `.img <limit> <Name>` or `.img <limit> (replied message)`\
-    \n**Usage : **do google image search and sends 3 images. default if you havent mentioned limit"
+    \n**Uso: **do google image search and sends 3 images. default if you havent mentioned limit"
     }
 )

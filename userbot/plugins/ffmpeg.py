@@ -30,7 +30,7 @@ async def ff_mpeg_trim_cmd(event):
                     reply_message,
                     FF_MPEG_DOWN_LOAD_MEDIA_PATH,
                     progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                        progress(d, t, catevent, c_time, "trying to download")
+                        progress(d, t, catevent, c_time, "A baixar")
                     ),
                 )
             except Exception as e:
@@ -39,7 +39,7 @@ async def ff_mpeg_trim_cmd(event):
                 end = datetime.now()
                 ms = (end - start).seconds
                 await catevent.edit(
-                    f"Saved file to `{downloaded_file_name}` in `{ms}` seconds."
+                    f"Saved file to `{downloaded_file_name}` in `{ms}` segundos."
                 )
         else:
             await edit_delete(event, "`Reply to a any media file`")
@@ -77,7 +77,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                catevent, f"**Error : **`Can't complete the process`"
+                catevent, f"**Erro: **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -90,12 +90,12 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=reply_to_id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, catevent, c_time, "trying to upload")
+                    progress(d, t, catevent, c_time, "A enviar")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(catevent, f"**Error : **`{e}`")
+            return await edit_delete(catevent, f"**Erro: **`{e}`")
     elif len(cmt) == 2:
         # output should be image
         cmd, start_time = cmt
@@ -104,7 +104,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                catevent, f"**Error : **`Can't complete the process`"
+                catevent, f"**Erro: **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -117,18 +117,18 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=event.message.id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, catevent, c_time, "trying to upload")
+                    progress(d, t, catevent, c_time, "A enviar")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(catevent, f"**Error : **`{e}`")
+            return await edit_delete(catevent, f"**Erro: **`{e}`")
     else:
         await edit_delete(catevent, "RTFM")
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_delete(catevent, f"`Completed Process in {ms} seconds`", 3)
+    await edit_delete(catevent, f"`Completed Process em {ms} segundos`", 3)
 
 
 @bot.on(admin_cmd(pattern="atrim"))
@@ -162,7 +162,7 @@ async def ff_mpeg_trim_cmd(event):
         )
         if o is None:
             return await edit_delete(
-                catevent, f"**Error : **`Can't complete the process`"
+                catevent, f"**Erro: **`Can't complete the process`"
             )
         try:
             c_time = time.time()
@@ -175,18 +175,18 @@ async def ff_mpeg_trim_cmd(event):
                 allow_cache=False,
                 reply_to=reply_to_id,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, catevent, c_time, "trying to upload")
+                    progress(d, t, catevent, c_time, "A enviar")
                 ),
             )
             os.remove(o)
         except Exception as e:
-            return await edit_delete(catevent, f"**Error : **`{e}`")
+            return await edit_delete(catevent, f"**Erro: **`{e}`")
     else:
         await edit_delete(catevent, "RTFM")
         return
     end = datetime.now()
     ms = (end - start).seconds
-    await edit_delete(catevent, f"`Completed Process in {ms} seconds`", 3)
+    await edit_delete(catevent, f"`Completed Process em {ms} segundos`", 3)
 
 
 @bot.on(admin_cmd(pattern="ffmpegclear$"))
@@ -272,15 +272,15 @@ CMD_HELP.update(
     {
         "ffmpeg": "**Plugin : **`ffmpeg`\
     \n\n  •  **Syntax : **`.ffmpegsave`\
-    \n  •  **Function : **__Saves the media file in bot to trim mutliple times__\
+    \n  •  **Função : **__Saves the media file in bot to trim mutliple times__\
     \n\n  •  **Syntax : **`.vtrim time`\
-    \n  •  **Function : **__Sends you the screenshot of the video at the given specific time__\
+    \n  •  **Função : **__Sends you the screenshot of the video at the given specific time__\
     \n\n  •  **Syntax : **`.vtrim starttime endtime`\
-    \n  •  **Function : **__Trims the saved media with specific given time internval and outputs as video__\
+    \n  •  **Função : **__Trims the saved media with specific given time internval and outputs as video__\
     \n\n  •  **Syntax : **`.atrim starttime endtime`\
-    \n  •  **Function : **__Trims the saved media with specific given time internval and outputs as audio__\
+    \n  •  **Função : **__Trims the saved media with specific given time internval and outputs as audio__\
     \n\n  •  **Syntax : **`.ffmpegclear`\
-    \n  •  **Function : **__Deletes the saved media so you can save new one__\
+    \n  •  **Função : **__Deletes the saved media so you can save new one__\
     "
     }
 )

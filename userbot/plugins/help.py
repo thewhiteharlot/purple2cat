@@ -20,13 +20,13 @@ async def cmd_list(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
         string = (
-            "Total {count} commands found in {plugincount} plugins of catuserbot\n\n"
+            "Total {count} comandos encontrados em {plugincount} plugins de catuserbot\n\n"
         )
         catcount = 0
         plugincount = 0
         for i in sorted(CMD_LIST):
             plugincount += 1
-            string += f"{plugincount}) Commands found in Plugin " + i + " are \n"
+            string += f"{plugincount}) Comandos encontrados no Plugin " + i + " são \n"
             for iter_list in CMD_LIST[i]:
                 string += "    " + str(iter_list)
                 string += "\n"
@@ -43,7 +43,7 @@ async def cmd_list(event):
                 .get("key")
             )
             url = f"https://nekobin.com/{key}"
-            reply_text = f"**All commands of the catuserbot can be seen [here]({url})**"
+            reply_text = f"**Todos os comandos do catuserbot podem ser vistos [aqui]({url})**"
             await event.edit(reply_text)
             return
         await event.edit(string.format(count=catcount, plugincount=plugincount))
@@ -65,9 +65,7 @@ async def cmd_list(event):
             await event.delete()
     else:
         if HELPTYPE is True:
-            help_string = f"Userbot Helper. Provided by {DEFAULTUSER} to reveal all the plugins\
-                          \nCheck `.help plugin name` for commands, in case popup doesn't appear.\
-                          \nCheck `.info plugin name` for usage of thoose plugins and commands"
+            help_string = f"Userbot Helper."
             tgbotusername = Config.TG_BOT_USER_NAME_BF_HER
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername, help_string
@@ -77,7 +75,7 @@ async def cmd_list(event):
         else:
             string = "<b>Please specify which plugin do you want help for !!\
                 \nNumber of plugins : </b><code>{count}</code>\
-                \n<b>Usage:</b> <code>.help plugin name</code> \n\n"
+                \n<b>Uso:</b> <code>.help plugin name</code> \n\n"
             catcount = 0
             for i in sorted(CMD_LIST):
                 string += "◆ " + f"<code>{str(i)}</code>"
@@ -90,7 +88,7 @@ async def cmd_list(event):
 async def info(event):
     input_str = event.pattern_match.group(1)
     if input_str == "text":
-        string = "Total {count} commands found in {plugincount} sudo plugins of catuserbot\n\n"
+        string = "Total {count} commands found em {plugincount} sudo plugins of catuserbot\n\n"
         catcount = 0
         plugincount = 0
         for i in sorted(SUDO_LIST):
@@ -138,7 +136,7 @@ async def info(event):
     else:
         string = "<b>Please specify which plugin do you want help for !!\
             \nNumber of plugins : </b><code>{count}</code>\
-            \n<b>Usage:</b> <code>.help plugin name</code>\n\n"
+            \n<b>Uso:</b> <code>.help plugin name</code>\n\n"
         catcount = 0
         for i in sorted(SUDO_LIST):
             string += "◆ " + f"<code>{str(i)}</code>"
@@ -162,7 +160,7 @@ async def info(event):
     else:
         string = "<b>Please specify which plugin do you want help for !!\
             \nNumber of plugins : </b><code>{count}</code>\
-            \n<b>Usage : </b><code>.info plugin name</code>\n\n"
+            \n<b>Uso: </b><code>.info plugin name</code>\n\n"
         catcount = 0
         for i in sorted(CMD_HELP):
             string += "◆ " + f"<code>{str(i)}</code>"
@@ -222,15 +220,15 @@ CMD_HELP.update(
         "help": """**Plugin : **`help`
 
   •  **Syntax : **`.help/.help plugin_name`
-  •  **Function : **__If you just type .help then shows you help menu, if plugin name is given then shows you only commands in thst plugin and if you use `.help text` then shows you all commands in your userbot__
+  •  **Função : **__If you just type .help then shows you help menu, if plugin name is given then shows you only commands in thst plugin and if you use `.help text` then shows you all commands in your userbot__
 
   •  **Syntax : **`.info/.info plugin_name`
-  •  **Function : **__To get details/information/usage of that plugin__
+  •  **Função : **__To get details/information/usage of that plugin__
 
   •  **Syntax : **`.dc`
-  •  **Function : **__Shows your dc id and dc ids list__
+  •  **Função : **__Shows your dc id and dc ids list__
 
   •  **Syntax : **`.setinline (true|false)`
-  •  **Function : **__Sets help menu either in inline or text format__"""
+  •  **Função : **__Sets help menu either in inline or text format__"""
     }
 )

@@ -52,7 +52,7 @@ async def set_not_afk(event):
     if "afk" not in current_message and "on" in USERAFK_ON:
         shite = await event.client.send_message(
             event.chat_id,
-            "`Back alive! No Longer afk.\nWas afk for " + endtime + "`",
+            "`Online Novamente!.\nEstive ausente por " + endtime + "`",
         )
         USERAFK_ON = {}
         afk_time = None
@@ -61,8 +61,8 @@ async def set_not_afk(event):
         if BOTLOG:
             await event.client.send_message(
                 BOTLOG_CHATID,
-                "#AFKFALSE \n`Set AFK mode to False\n"
-                + "Back alive! No Longer afk.\nWas afk for "
+                "#AFKFALSE \n`Modo AFK Desligado\n"
+                + "Online Novamente!.\nEstive ausente por "
                 + endtime
                 + "`",
             )
@@ -109,13 +109,13 @@ async def on_afk(event):
         msg = None
         if link and reason:
             message_to_reply = (
-                f"**I am AFK .\n\nAFK Since {endtime}\nReason : **{reason}"
+                f"**Estou ausente.\nFaz {endtime}\nMotivo: **{reason}"
             )
         elif reason:
-            message_to_reply = f"`I am AFK .\n\nAFK Since {endtime}\nReason : {reason}`"
+            message_to_reply = f"`Estou ausente.\nFaz {endtime}\nMotivo: {reason}`"
         else:
             message_to_reply = (
-                f"`I am AFK .\n\nAFK Since {endtime}\nReason : Not Mentioned ( ಠ ʖ̯ ಠ)`"
+                f"`Estou ausente.\nFaz {endtime}\nMotivo: Não Mencionado ( ಠ ʖ̯ ಠ)`"
             )
         if event.chat_id not in Config.UB_BLACK_LIST_CHAT:
             msg = await event.reply(message_to_reply)
@@ -128,8 +128,8 @@ async def on_afk(event):
             if not event.is_private:
                 await event.client.send_message(
                     Config.PM_LOGGR_BOT_API_ID,
-                    f"#AFK_TAGS \n<b>Group : </b><code>{hmm.title}</code>\
-                            \n<b>Message : </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> link</a>",
+                    f"#AFK_TAGS \n<b>Grupo: </b><code>{hmm.title}</code>\
+                            \n<b>Mensagem: </b><a href = 'https://t.me/c/{hmm.id}/{event.message.id}'> link</a>",
                     parse_mode="html",
                     link_preview=False,
                 )
@@ -168,31 +168,30 @@ async def _(event):
             afk_time = datetime.now()
         USERAFK_ON = f"on: {reason}"
         if reason:
-            await edit_delete(event, f"`I shall be Going afk! because ~` {reason}", 5)
+            await edit_delete(event, f"`Vou me ausentar! Motivo ~` {reason}", 5)
         else:
-            await edit_delete(event, f"`I shall be Going afk! `", 5)
+            await edit_delete(event, f"`Vou me ausentar! `", 5)
         if BOTLOG:
             if reason:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"#AFKTRUE \nSet AFK mode to True, and Reason is {reason}",
+                    f"#AFKTRUE \nModo AFK ATIVADO e o motivo é {reason}",
                 )
             else:
                 await event.client.send_message(
                     BOTLOG_CHATID,
-                    f"#AFKTRUE \nSet AFK mode to True, and Reason is Not Mentioned",
+                    f"#AFKTRUE \nModo AFK ATIVADO e o motivo é `Não Mencionado`",
                 )
 
 
 CMD_HELP.update(
     {
         "afk": "**Plugin : **`afk`\
-        \n\n  •  **Syntax : **`.afk [Optional Reason]`\
-        \n  •  **Function : **__Sets you as afk.\nReplies to anyone who tags/PM's \
-        \you telling them that you are AFK(reason).\n\nSwitches off AFK when you type back anything, anywhere.\
-        \afk means away from keyboard/keypad.__\
-        \n\n  •  **Note :** If you want AFK with hyperlink use [ ; ] after reason, then paste the media link.\
-        \n  •  **Example :** `.afk busy now ;<Media_link>`\
+        \n\n  •  **Syntax : **`.afk [Motivo Opcional]`\
+        \n  •  **Função : **__Ativa o modo afk.\nResponde para qualquer pessoa que marca/PV's \
+        \Informando que você está ausente (motivo).\n\nO modo AFK é desligado automaticamente quando você digita qualquer coisa, em qualquer lugar.__\
+        \n\n  •  **Observação :** Se você quiser usar hiperlink, use [ ; ] após o motivo, cole o link de mídia.\
+        \n  •  **Exemplo :** `.afk ocupado ;<Media_link>`\
 "
     }
 )

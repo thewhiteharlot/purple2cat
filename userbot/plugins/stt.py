@@ -58,11 +58,11 @@ async def _(event):
                 end = datetime.now()
                 ms = (end - start).seconds
                 if transcript_response != "":
-                    string_to_show = "**Language : **`{}`\n**Transcript : **`{}`\n**Time Taken : **`{} seconds`\n**Confidence : **`{}`".format(
+                    string_to_show = "**Language : **`{}`\n**Transcript : **`{}`\n**Tempo necessário: **`{} segundos`\n**Confidence : **`{}`".format(
                         lan, transcript_response, ms, transcript_confidence
                     )
                 else:
-                    string_to_show = "**Language : **`{}`\n**Time Taken : **`{} seconds`\n**No Results Found**".format(
+                    string_to_show = "**Language : **`{}`\n**Tempo necessário: **`{} segundos`\n**No Results Found**".format(
                         lan, ms
                     )
                 await catevent.edit(string_to_show)
@@ -78,6 +78,6 @@ CMD_HELP.update(
     {
         "stt": "**Plugin : **`stt`\
     \n\n**Syntax :** `.stt en` reply this to voice message\
-    \n**Usage : **speech to text module"
+    \n**Uso: **speech to text module"
     }
 )

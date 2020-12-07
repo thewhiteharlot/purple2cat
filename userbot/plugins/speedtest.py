@@ -46,7 +46,7 @@ async def _(event):
         speedtest_image = response
         if as_text:
             await catevent.edit(
-                """`SpeedTest completed in {} seconds`
+                """`SpeedTest completed em {} segundos`
 
 `Download: {}`
 `Upload: {}`
@@ -65,7 +65,7 @@ async def _(event):
             await event.client.send_file(
                 event.chat_id,
                 speedtest_image,
-                caption="**SpeedTest** completed in {} seconds".format(ms),
+                caption="**SpeedTest** completed em {} segundos".format(ms),
                 force_document=as_document,
                 reply_to=reply_msg_id,
                 allow_cache=False,
@@ -73,7 +73,7 @@ async def _(event):
             await event.delete()
     except Exception as exc:
         await catevent.edit(
-            """**SpeedTest** completed in {} seconds
+            """**SpeedTest** completed em {} segundos
 Download: {}
 Upload: {}
 Ping: {}

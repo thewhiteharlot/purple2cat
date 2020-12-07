@@ -153,13 +153,13 @@ CMD_HELP.update(
     {
         "welcome": "**Plugin :** `welcome`\
 \n\n  •  **Syntax :** `.savewelcome` <welcome message> or reply to a message with .savewelcome\
-\n  •  **Function :** Saves the message as a welcome note in the chat.\
-\n\n  •  Available variables for formatting welcome messages :\
+\n  •  **Função :** Saves the message as a welcome note in the chat.\
+\n\n  •  Variáveis disponíveis para formatar mensagens de boas-vindas :\
 \n`{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`\
 \n\n  •  **Syntax :** `.listwelcome`\
-\n  •  **Function :** Check whether you have a welcome note in the chat.\
+\n  •  **Função :** Check whether you have a welcome note in the chat.\
 \n\n  •  **Syntax :** `.clearwelcome`\
-\n  •  **Function :** Deletes the welcome note for the current chat.\
+\n  •  **Função :** Deletes the welcome note for the current chat.\
 "
     }
 )

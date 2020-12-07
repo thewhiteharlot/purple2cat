@@ -110,11 +110,11 @@ CMD_HELP.update(
     {
         "translate": "**Plugin :** `translate`\
          \n\n**  • Syntax : **`.tl LanguageCode <text/reply>`\
-         \n**  • Function : **Translates given language to destination language\
+         \n**  • Função : **Translates given language to destination language\
          \n\n**  • Syntax : **`.trt <Reply/text>`\
-         \n**  • Function : **it will translate your messege\
+         \n**  • Função : **it will translate your messege\
          \n\n**  • Syntax : **`.lang trt LanguageCode`\
-         \n**  • Function : **It will set default langaugeCode for **trt**\
+         \n**  • Função : **It will set default langaugeCode for **trt**\
          \n\n**  • Check here ** [Language codes](https://telegra.ph/Language-codes-11-01)\
         "
     }

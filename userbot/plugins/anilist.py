@@ -1,6 +1,6 @@
 """
 Anilist Search Plugin for Userbot
-Usage : .anilist animeName
+Uso: .anilist animeName
 By :- @Zero_cool7870
 ported char, airing and manga by @sandy1709 and @mrconfused
 """
@@ -329,13 +329,13 @@ CMD_HELP.update(
     {
         "anilist": "**Plugin : **`anilist`\
     \n\n**Syntax : **`.anilist <anime name >`\
-    \n**Usage : **Shows you the details of the anime.\
+    \n**Uso: **Shows you the details of the anime.\
     \n\n**Syntax : **`.char <character name >`\
-    \n**Usage : **Shows you the details of that character in anime with pic.\
+    \n**Uso: **Shows you the details of that character in anime with pic.\
     \n\n**Syntax : **`.manga <anime name >`\
-    \n**Usage : **Shows you the details of the manga.\
+    \n**Uso: **Shows you the details of the manga.\
     \n\n**Syntax : **`.airing <anime name >`\
-    \n**Usage : **Shows you the time for that current running anime show.\
+    \n**Uso: **Shows you the time for that current running anime show.\
     "
     }
 )

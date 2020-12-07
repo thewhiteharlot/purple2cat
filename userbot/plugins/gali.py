@@ -102,7 +102,7 @@ CMD_HELP.update(
         \n  •  `.kiss`\
         \n  •  `.fuk`\
         \n  •  `.sex`\
-        \n\n**Function :**\
+        \n\n**Função :**\
         \n__First 5 are random gali string generaters__\
         \n__Last 3 are animations__\
         "

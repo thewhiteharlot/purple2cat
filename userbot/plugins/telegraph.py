@@ -21,7 +21,7 @@ auth_url = r["auth_url"]
 async def _(event):
     if event.fwd_from:
         return
-    catevent = await edit_or_reply(event, "`processing........`")
+    catevent = await edit_or_reply(event, "`Processando..`")
     if not os.path.isdir(Config.TEMP_DIR):
         os.makedirs(Config.TEMP_DIR)
     if BOTLOG:
@@ -43,7 +43,7 @@ async def _(event):
             end = datetime.now()
             ms = (end - start).seconds
             await catevent.edit(
-                f"`Downloaded to {downloaded_file_name} in {ms} seconds.`"
+                f"`Baixado para {downloaded_file_name} em {ms} segundos.`"
             )
             if downloaded_file_name.endswith((".webp")):
                 resize_image(downloaded_file_name)
@@ -51,15 +51,15 @@ async def _(event):
                 start = datetime.now()
                 media_urls = upload_file(downloaded_file_name)
             except exceptions.TelegraphException as exc:
-                await catevent.edit("**Error : **" + str(exc))
+                await catevent.edit("**Erro: **" + str(exc))
                 os.remove(downloaded_file_name)
             else:
                 end = datetime.now()
                 ms_two = (end - start).seconds
                 os.remove(downloaded_file_name)
                 await catevent.edit(
-                    "**link : **[telegraph](https://telegra.ph{})\
-                    \n**Time Taken : **`{} seconds.`".format(
+                    "**Link: **[Telegraph](https://telegra.ph{})\
+                    \n**Tempo necessário: **`{} segundos.`".format(
                         media_urls[0], (ms + ms_two)
                     ),
                     link_preview=True,
@@ -89,8 +89,8 @@ async def _(event):
             ms = (end - start).seconds
             cat = f"https://telegra.ph/{response['path']}"
             await catevent.edit(
-                f"**link : ** [telegraph]({cat})\
-                 \n**Time Taken : **`{ms} seconds.`",
+                f"**Link: ** [Telegraph]({cat})\
+                 \n**Tempo necessário: **`{ms} segundos.`",
                 link_preview=True,
             )
     else:
@@ -108,9 +108,9 @@ CMD_HELP.update(
     {
         "telegraph": "**Plugin :**`telegraph`\
      \n\n  •  **Syntax :** `.telegraph media` `or` `tgm`\
-     \n  •  **Function :**__Reply to any image or video to upload it to telegraph (video must be less than 5mb)__\
+     \n  •  **Função :**__Reply to any image or video to upload it to telegraph (video must be less than 5mb)__\
      \n\n  •  **Syntax :** `.telegraph text` `or` `.tgt`\
-     \n  •  **Function :** __reply to any text file or any message to paste it to telegraph__\
+     \n  •  **Função :** __reply to any text file or any message to paste it to telegraph__\
     "
     }
 )

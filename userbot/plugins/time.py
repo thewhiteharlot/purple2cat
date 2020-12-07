@@ -110,7 +110,7 @@ async def time_func(tdata):
     if COUNTRY:
         await edit_or_reply(
             tdata,
-            f"`It's`  **{dtnow1}**` on `**{dtnow2}**  `here, in {COUNTRY}"
+            f"`It's`  **{dtnow1}**` on `**{dtnow2}**  `here, em {COUNTRY}"
             f"({time_zone} timezone).`",
         )
         return
@@ -155,8 +155,8 @@ CMD_HELP.update(
     {
         "time": "**Plugin : **`time`\
         \n\n**Syntax : **`.ctime <country name/code> <timezone number>` \
-    \n**Function : **__Get the time of a country. If a country has multiple timezones, it will list all of them and let you select one. here are [country names](https://telegra.ph/country-names-10-24)__\
+    \n**Função : **__Get the time of a country. If a country has multiple timezones, it will list all of them and let you select one. here are [country names](https://telegra.ph/country-names-10-24)__\
     \n\n**Syntax : **`.time` \
-    \n**Function : **__shows current default time you can change by changing TZ in heroku vars__"
+    \n**Função : **__shows current default time you can change by changing TZ in heroku vars__"
     }
 )

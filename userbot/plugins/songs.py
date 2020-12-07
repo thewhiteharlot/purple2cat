@@ -64,14 +64,14 @@ async def _(event):
         pass
     stderr = (await runcmd(song_cmd))[1]
     if stderr:
-        return await catevent.edit(f"**Error :** `{stderr}`")
+        return await catevent.edit(f"**Erro:** `{stderr}`")
     catname, stderr = (await runcmd(name_cmd))[:2]
     if stderr:
-        return await catevent.edit(f"**Error :** `{stderr}`")
+        return await catevent.edit(f"**Erro:** `{stderr}`")
     # stderr = (await runcmd(thumb_cmd))[1]
     catname = os.path.splitext(catname)[0]
     # if stderr:
-    #    return await catevent.edit(f"**Error :** `{stderr}`")
+    #    return await catevent.edit(f"**Erro:** `{stderr}`")
     song_file = Path(f"{catname}.mp3")
     if not os.path.exists(song_file):
         return await catevent.edit(
@@ -135,10 +135,10 @@ async def _(event):
     video_cmd = video_dl.format(video_link=video_link)
     stderr = (await runcmd(video_cmd))[1]
     if stderr:
-        return await catevent.edit(f"**Error :** `{stderr}`")
+        return await catevent.edit(f"**Erro:** `{stderr}`")
     catname, stderr = (await runcmd(name_cmd))[:2]
     if stderr:
-        return await catevent.edit(f"**Error :** `{stderr}`")
+        return await catevent.edit(f"**Erro:** `{stderr}`")
     # stderr = (await runcmd(thumb_cmd))[1]
     try:
         cat = Get(cat)
@@ -146,7 +146,7 @@ async def _(event):
     except BaseException:
         pass
     # if stderr:
-    #    return await catevent.edit(f"**Error :** `{stderr}`")
+    #    return await catevent.edit(f"**Erro:** `{stderr}`")
     catname = os.path.splitext(catname)[0]
     vsong_file = Path(f"{catname}.mp4")
     if not os.path.exists(vsong_file):
@@ -224,13 +224,13 @@ CMD_HELP.update(
     {
         "songs": "**Plugin : **`songs`\
         \n\n  •**Syntax : **`.song <query/reply>`\
-        \n  •**Function : **__searches the song you entered in query from youtube and sends it, quality of it is 128k__\
+        \n  •**Função : **__searches the song you entered in query from youtube and sends it, quality of it is 128k__\
         \n\n  •**Syntax : **`.song320 <query/reply>`\
-        \n  •**Function : **__searches the song you entered in query from youtube and sends it quality of it is 320k__\
+        \n  •**Função : **__searches the song you entered in query from youtube and sends it quality of it is 320k__\
         \n\n  •**Syntax : **`.vsong <query/reply>`\
-        \n  •**Function : **__Searches the video song you entered in query and sends it__\
+        \n  •**Função : **__Searches the video song you entered in query and sends it__\
         \n\n  •**Syntax : **`.song2 query`\
-        \n  •**Function : **__searches the song you entered in query and sends it quality of it is 320k__\
+        \n  •**Função : **__searches the song you entered in query and sends it quality of it is 320k__\
         "
     }
 )

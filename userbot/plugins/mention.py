@@ -90,16 +90,16 @@ CMD_HELP.update(
         "mention": """**Plugin : **`mention`
 
   •  **Syntax : **`.all`
-  •  **Function : **__tags recent 100 persons in the group may not work for all__  
+  •  **Função : **__tags recent 100 persons in the group may not work for all__  
 
   •  **Syntax : **`.tagall`
-  •  **Function : **__tags recent 100 persons in the group may not work for all__ 
+  •  **Função : **__tags recent 100 persons in the group may not work for all__ 
 
   •  **Syntax : **`.report`
-  •  **Function : **__tags admins in group__  
+  •  **Função : **__tags admins in group__  
 
   •  **Syntax : **`.men username/userid text`
-  •  **Function : **__tags that person with the given custom text other way for this is __
+  •  **Função : **__tags that person with the given custom text other way for this is __
   •  **syntax : **`Hi username[custom text]`
 """
     }

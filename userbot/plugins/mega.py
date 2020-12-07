@@ -66,7 +66,7 @@ async def mega_downloader(megadl):
     elif msg_link:
         link = msg_link.text
     else:
-        return await catevent.edit("Usage: `.mega` **<MEGA.nz link>**")
+        return await catevent.edit("Uso: `.mega` **<MEGA.nz link>**")
     try:
         link = re.findall(r"\bhttps?://.*mega.*\.nz\S+", link)[0]
         # - Mega changed their URL again -
@@ -189,7 +189,7 @@ CMD_HELP.update(
     {
         "mega": "**Plugin :** `mega`\
         \n\n**Syntax :** `.mega` <MEGA.nz link>\
-        \n**Usage : **Reply to a MEGA.nz link or paste your MEGA.nz link\
+        \n**Uso: **Reply to a MEGA.nz link or paste your MEGA.nz link\
         \n\n__ It will download the file into your userbot server.__"
     }
 )

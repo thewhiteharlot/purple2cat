@@ -186,6 +186,6 @@ CMD_HELP.update(
   •  `.subscript`
   •  `.superscript`
   
-**Function : **__Reply the command to the text message or give input along with command to convert that text to given font style__"""
+**Função : **__Reply the command to the text message or give input along with command to convert that text to given font style__"""
     }
 )

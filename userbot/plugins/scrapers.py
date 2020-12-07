@@ -149,10 +149,10 @@ CMD_HELP.update(
         "scrapers": """**Plugin : **`scrapers`
 
   •  **Syntax : ** `.wiki query`
-  •  **Function : **__Fetches given query in wikipedia and shows you__
+  •  **Função : **__Fetches given query in wikipedia and shows you__
 
   •  **Syntax : ** `.imdb query`
-  •  **Function : **__Fetches Given movie details from imdb__
+  •  **Função : **__Fetches Given movie details from imdb__
 """
     }
 )

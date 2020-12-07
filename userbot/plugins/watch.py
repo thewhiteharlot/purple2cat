@@ -87,7 +87,7 @@ async def _(event):
     try:
         streams = get_stream_data(query)
     except Exception as e:
-        return await et.edit(f"**Error :** `{str(e)}`")
+        return await et.edit(f"**Erro:** `{str(e)}`")
     title = streams["title"]
     thumb_link = streams["movie_thumb"]
     release_year = streams["release_year"]
@@ -133,7 +133,7 @@ CMD_HELP.update(
     {
         "watch": "**Plugin :** `watch`\
     \n\n**Syntax :** `.watch query`\
-    \n**Usage : **Fetches the list of sites(standard) where you can watch that movie\
+    \n**Uso: **Fetches the list of sites(standard) where you can watch that movie\
     "
     }
 )

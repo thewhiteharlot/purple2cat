@@ -211,6 +211,6 @@ CMD_HELP.update(
   •  `.smoon`
   •  `.tmoon`
   
-**Function : **__Different kinds of animation commands check yourself for their animation .__"""
+**Função : **__Different kinds of animation commands check yourself for their animation .__"""
     }
 )

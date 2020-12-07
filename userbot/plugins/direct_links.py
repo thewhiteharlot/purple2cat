@@ -24,7 +24,7 @@ from . import CMD_HELP
 @bot.on(sudo_cmd(allow_sudo=True, pattern=r"direct(?: |$)([\s\S]*)"))
 async def direct_link_generator(request):
     """ direct links generator """
-    catevent = await edit_or_reply(request, "`Processing...`")
+    catevent = await edit_or_reply(request, "`Processando...`")
     textx = await request.get_reply_message()
     message = request.pattern_match.group(1)
     if message:
@@ -32,7 +32,7 @@ async def direct_link_generator(request):
     elif textx:
         message = textx.text
     else:
-        await catevent.edit("`Usage: .direct <url>`")
+        await catevent.edit("`Uso: .direct <url>`")
         return
     reply = ""
     links = re.findall(r"\bhttps?://.*\.\S+", message)
@@ -355,7 +355,7 @@ CMD_HELP.update(
     {
         "direct_links": "**Plugin : **`direct`\
         \n\n**Syntax : **`.direct <url>`\n"
-        "**Function : **Reply to a link or paste a URL to\n"
+        "**Função : **Reply to a link or paste a URL to\n"
         "generate a direct download link\n\n"
         "List of supported URLs:\n"
         "`Google Drive - Cloud Mail - Yandex.Disk - AFH - "

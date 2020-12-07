@@ -68,14 +68,14 @@ async def _(event):
         await event.client.send_file(
             event.chat_id,
             required_file_name,
-            # caption="Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms),
+            # caption="Processado {} ({}) em {} segundos!".format(text[0:97], lan, ms),
             reply_to=event.message.reply_to_msg_id,
             allow_cache=False,
             voice_note=True,
         )
         os.remove(required_file_name)
         event = await edit_or_reply(
-            event, "Processed {} ({}) in {} seconds!".format(text[0:97], lan, ms)
+            event, "Processado {} ({}) em {} segundos!".format(text[0:97], lan, ms)
         )
         await asyncio.sleep(5)
         await event.delete()

@@ -1898,6 +1898,6 @@ CMD_HELP.update(
   •  `.qt`
   •  `.logic`  
 
-**Function : **__Random text strings are shown__"""
+**Função : **__Random text strings are shown__"""
     }
 )

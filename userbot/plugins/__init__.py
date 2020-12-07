@@ -114,7 +114,7 @@ def set_key(dictionary, key, value):
 def check_data_base_heal_th():
     # https://stackoverflow.com/a/41961968
     is_database_working = False
-    output = "No Database is set"
+    output = "Nenhum banco de dados está definido"
     if not Config.DB_URI:
         return is_database_working, output
     from userbot.plugins.sql_helper import SESSION

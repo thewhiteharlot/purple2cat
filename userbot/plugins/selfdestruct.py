@@ -26,7 +26,7 @@ async def selfdestruct(destroy):
     message = cat[1]
     ttl = int(cat[0])
     text = (
-        message + f"\n\n`This message shall be self-destructed in {str(ttl)} seconds`"
+        message + f"\n\n`This message shall be self-destructed em {str(ttl)} segundos`"
     )
     try:
         await destroy.delete()
@@ -41,9 +41,9 @@ CMD_HELP.update(
     {
         "selfdestruct": "**Plugin : **`selfdestruct`\
         \n\n**Syntax : **`.sdm [number] [text]`\
-        \n**Function : **__self destruct this message in number seconds__\
+        \n**Função : **__self destruct this message in number seconds__\
         \n\n**Syntax : **`.selfdm [number] [text]`\
-        \n**Function : **__self destruct this message in number seconds with showing that it will destruct. __\
+        \n**Função : **__self destruct this message in number seconds with showing that it will destruct. __\
 "
     }
 )

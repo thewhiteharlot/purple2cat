@@ -122,13 +122,13 @@ CMD_HELP.update(
     {
         "snip": "**Plugin :** `snip`\
 \n\n**Syntax :** #<snipname>\
-\n**Usage :** Gets the specified note.\
+\n**Uso:** Gets the specified note.\
 \n\n**Syntax :** `.snips: reply to a message with .snips <notename>`\
-\n**Usage :** Saves the replied message as a note with the notename. (Works with pics, docs, and stickers too!)\
+\n**Uso:** Saves the replied message as a note with the notename. (Works with pics, docs, and stickers too!)\
 \n\n**Syntax :** `.snipl`\
-\n**Usage :** Gets all saved notes in a chat.\
+\n**Uso:** Gets all saved notes in a chat.\
 \n\n**Syntax :** `.snipd <notename>`\
-\n**Usage :** Deletes the specified note.\
+\n**Uso:** Deletes the specified note.\
 "
     }
 )

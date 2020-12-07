@@ -103,18 +103,18 @@ async def catgban(cat):
     cattaken = (end - start).seconds
     if reason:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) was gbanned in `{count}` groups in `{cattaken} seconds`!!\nReason: `{reason}`"
+            f"[{user.first_name}](tg://user?id={user.id}) was gbanned in `{count}` groups in `{cattaken} segundos`!!\nMotivo: `{reason}`"
         )
     else:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) was gbanned in `{count}` groups in `{cattaken} seconds`!!"
+            f"[{user.first_name}](tg://user?id={user.id}) was gbanned in `{count}` groups in `{cattaken} segundos`!!"
         )
 
     if BOTLOG and count != 0:
         await cat.client.send_message(
             BOTLOG_CHATID,
             f"#GBAN\nGlobal BAN\nUser: [{user.first_name}](tg://user?id={user.id})\nID: `{user.id}`\
-                                                \nReason: `{reason}`\nBanned in `{count}` groups\nTime taken = `{cattaken} seconds`",
+                                                \nMotivo: `{reason}`\nBanned in `{count}` groups\nTime taken = `{cattaken} segundos`",
         )
 
 
@@ -159,18 +159,18 @@ async def catgban(cat):
     cattaken = (end - start).seconds
     if reason:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) was ungbanned in `{count}` groups in `{cattaken} seconds`!!\nReason: `{reason}`"
+            f"[{user.first_name}](tg://user?id={user.id}) was ungbanned in `{count}` groups in `{cattaken} segundos`!!\nMotivo: `{reason}`"
         )
     else:
         await cate.edit(
-            f"[{user.first_name}](tg://user?id={user.id}) was ungbanned in `{count}` groups in `{cattaken} seconds`!!"
+            f"[{user.first_name}](tg://user?id={user.id}) was ungbanned in `{count}` groups in `{cattaken} segundos`!!"
         )
 
     if BOTLOG and count != 0:
         await cat.client.send_message(
             BOTLOG_CHATID,
             f"#UNGBAN\nGlobal UNBAN\nUser: [{user.first_name}](tg://user?id={user.id})\nID: {user.id}\
-                                                \nReason: `{reason}`\nUnbanned in `{count}` groups\nTime taken = `{cattaken} seconds`",
+                                                \nMotivo: `{reason}`\nUnbanned in `{count}` groups\nTime taken = `{cattaken} segundos`",
         )
 
 
@@ -214,7 +214,7 @@ async def startgmute(event):
     if event.fwd_from:
         return
     if event.is_private:
-        await event.edit("Unexpected issues or ugly errors may occur!")
+        await event.edit("Podem ocorrer problemas inesperados ou erros!")
         await asyncio.sleep(3)
         private = True
 
@@ -236,7 +236,7 @@ async def startgmute(event):
     try:
         mute(userid, "gmute")
     except Exception as e:
-        await edit_or_reply(event, "Error occured!\nError is " + str(e))
+        await edit_or_reply(event, "Ocorreu um erro!\nErro é " + str(e))
     else:
         await edit_or_reply(event, "Successfully gmuted that person")
     if BOTLOG:
@@ -255,7 +255,7 @@ async def endgmute(event):
     if event.fwd_from:
         return
     if event.is_private:
-        await event.edit("Unexpected issues or ugly errors may occur!")
+        await event.edit("Podem ocorrer problemas inesperados ou erros!")
         await asyncio.sleep(3)
         private = True
     reply = await event.get_reply_message()
@@ -277,7 +277,7 @@ async def endgmute(event):
     try:
         unmute(userid, "gmute")
     except Exception as e:
-        await edit_or_reply(event, "Error occured!\nError is " + str(e))
+        await edit_or_reply(event, "Ocorreu um erro!\nErro é " + str(e))
     else:
         await edit_or_reply(event, "Successfully ungmuted that person")
     if BOTLOG:
@@ -299,14 +299,14 @@ CMD_HELP.update(
     {
         "gadmin": "**Plugin : **`gadmin`\
         \n\n  •  **Syntax : **`.gban <username/reply/userid> <reason (optional)>`\
-\n  •  **Function : **__Bans the person in all groups where you are admin .__\
+\n  •  **Função : **__Bans the person in all groups where you are admin .__\
 \n\n  •  **Syntax : **`.ungban <username/reply/userid>`\
-\n  •  **Function : **__Reply someone's message with .ungban to remove them from the gbanned list.__\
+\n  •  **Função : **__Reply someone's message with .ungban to remove them from the gbanned list.__\
 \n\n  •  **Syntax : **`.listgban`\
-\n  •  **Function : **__Shows you the gbanned list and reason for their gban.__\
+\n  •  **Função : **__Shows you the gbanned list and reason for their gban.__\
 \n\n  •  **Syntax : **`.gmute <username/reply> <reason (optional)>`\
-\n  •  **Function : **__Mutes the person in all groups you have in common with them.__\
+\n  •  **Função : **__Mutes the person in all groups you have in common with them.__\
 \n\n  •  **Syntax : **`.ungmute <username/reply>`\
-\n  •  **Function : **__Reply someone's message with .ungmute to remove them from the gmuted list.__"
+\n  •  **Função : **__Reply someone's message with .ungmute to remove them from the gmuted list.__"
     }
 )

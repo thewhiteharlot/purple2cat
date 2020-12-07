@@ -19,7 +19,7 @@ class Warns(BASE):
         self.reasons = ""
 
     def __repr__(self):
-        return "<{} warns for {} in {} for reasons {}>".format(
+        return "<{} warns for {} em {} for reasons {}>".format(
             self.num_warns, self.user_id, self.chat_id, self.reasons
         )
 

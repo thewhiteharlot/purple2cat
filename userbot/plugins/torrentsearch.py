@@ -107,7 +107,7 @@ async def _(event):
     if event.fwd_from:
         return
     start = datetime.now()
-    await event.edit("Processing ...")
+    await event.edit("Processando...")
     input_type = event.pattern_match.group(1)
     input_str = event.pattern_match.group(2)
     search_results = []
@@ -141,7 +141,7 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).seconds
     await event.edit(
-        f"Scrapped {input_type} for {input_str} in {ms} seconds. Obtained Results: \n {output_str}",
+        f"Scrapped {input_type} for {input_str} em {ms} segundos. Obtained Results: \n {output_str}",
         link_preview=False,
         parse_mode="html",
     )
@@ -219,11 +219,11 @@ CMD_HELP.update(
         "torrentsearch": """**Plugin : **`torrentsearch`
 
   •  **Syntax : **`.tsearch query`
-  •  **Function : **__Fetches torrent links of given query__
+  •  **Função : **__Fetches torrent links of given query__
 
   •  **Syntax : **`.movie idop.se query`
                 `.movie torrentz2.eu query`
-  •  **Function : **__Fetches torrent links of given query alternative way__
+  •  **Função : **__Fetches torrent links of given query alternative way__
 """
     }
 )

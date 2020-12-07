@@ -18,7 +18,7 @@ thumb_image_path = Config.TMP_DOWNLOAD_DIRECTORY + "/thumb_image.jpg"
 async def _(event):
     if event.fwd_from:
         return
-    catevent = await edit_or_reply(event, "Processing ...")
+    catevent = await edit_or_reply(event, "Processando...")
     if not os.path.isdir(Config.TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(Config.TMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
@@ -98,11 +98,11 @@ CMD_HELP.update(
     {
         "thumbnail": "**Plugin :** `thumbnail`\
     \n\n**Syntax :** `.savethumb`\
-    \n**Usage : **Reply to file or video to save it as temporary thumbimage\
+    \n**Uso: **Reply to file or video to save it as temporary thumbimage\
     \n\n**Syntax : **`.clearthumb`\
-    \n**Usage : **To clear Thumbnail no longer you uploads uses custom thumbanail\
+    \n**Uso: **To clear Thumbnail no longer you uploads uses custom thumbanail\
     \n\n**Syntax : **`.getthumb`\
-    \n**Usage : **To get thumbnail of given video or gives your present thumbnail\
+    \n**Uso: **To get thumbnail of given video or gives your present thumbnail\
     "
     }
 )

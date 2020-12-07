@@ -94,7 +94,7 @@ async def _(event):
         "😧",
         "😡",
         "😢",
-        "__**[Good to see you guys....]**__(github.com/sandy1709/catuserbot)",
+        "__**[Good to see you guys....]**__(github.com/xmtscf/catuserbot)",
     ]
     for i in animation_ttl:
         await asyncio.sleep(animation_interval)
@@ -260,6 +260,6 @@ CMD_HELP.update(
   •  `.gsg`
   •  `.theart`
   
-**Function : **__Different kinds of animation commands check yourself for their animation .__"""
+**Função : **__Different kinds of animation commands check yourself for their animation .__"""
     }
 )

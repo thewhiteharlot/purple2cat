@@ -12,10 +12,10 @@ async def _(event):
     if event.fwd_from:
         return
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot Restarted")
+        await event.client.send_message(BOTLOG_CHATID, "#RESTART \n" "Bot reiniciado")
     await edit_or_reply(
         event,
-        "Restarted. `.ping` me or `.help` to check if I am online, actually it takes 1-2 min for restarting",
+        "Reiniciado. `.ping` ou `.help` para verificar se estou online, na verdade leva de 1 a 2 minutos para reiniciar",
     )
     await bot.disconnect()
     execl(sys.executable, sys.executable, *sys.argv)
@@ -54,7 +54,7 @@ async def _(event):
             BOTLOG_CHATID,
             "You put the bot to sleep for " + str(counter) + " seconds",
         )
-    event = await edit_or_reply(event, f"`ok, let me sleep for {counter} seconds`")
+    event = await edit_or_reply(event, f"`ok, let me sleep for {counter} segundos`")
     sleep(counter)
     await event.edit("`OK, I'm awake now.`")
 
@@ -63,10 +63,10 @@ CMD_HELP.update(
     {
         "powertools": "**Plugin : **`powertools`\
         \n\n  •  **Syntax : **`.restart`\
-        \n  •  **Function : **__Restarts the bot !!__\
+        \n  •  **Função : **__Restarts the bot !!__\
         \n\n  •  **Syntax : **`.sleep <seconds>`\
-        \n  •  **Function: **__Userbots get tired too. Let yours snooze for a few seconds.__\
+        \n  •  **Function: **__Userbots get tired too. Let yours snooze for a few segundos.__\
         \n\n  •  **Syntax : **`.shutdown`\
-        \n**  •  Function : **__To turn off the dyno of heroku. you cant turn on by bot you need to got to heroku and turn on or use__ @hk_heroku_bot"
+        \n**  •  Função : **__To turn off the dyno of heroku. you cant turn on by bot you need to got to heroku and turn on or use__ @hk_heroku_bot"
     }
 )

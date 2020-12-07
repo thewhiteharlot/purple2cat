@@ -100,11 +100,11 @@ CMD_HELP.update(
     {
         "sysdetails": "**Plugin : **`sysdetails`\
         \n\n**Syntax : **`.spc`\
-        \n**Function : **__Show system specification.__\
+        \n**Função : **__Show system specification.__\
         \n\n**Syntax : **`.sysd`\
-        \n**Function : **__Shows system information using neofetch.__\
+        \n**Função : **__Shows system information using neofetch.__\
         \n\n**Syntax : **`.cpu`\
-        \n**Function : **__shows the cpu information__\
+        \n**Função : **__shows the cpu information__\
     "
     }
 )

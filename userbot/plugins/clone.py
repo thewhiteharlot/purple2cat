@@ -150,9 +150,9 @@ CMD_HELP.update(
     {
         "clone": "**Plugin : **`clone`\
         \n\n  •  **Syntax :** `.clone`<reply to user whom you want to clone\
-        \n  •  **Function : **clone the replied user account\
+        \n  •  **Função : **clone the replied user account\
         \n\n  •  **Syntax : **`.revert`\
-        \n  •  **Function : **Reverts back to your profile which you have set in heroku for  AUTONAME, DEFAULT_BIO\
+        \n  •  **Função : **Reverts back to your profile which you have set in heroku for  AUTONAME, DEFAULT_BIO\
     "
     }
 )

@@ -122,9 +122,9 @@ CMD_HELP.update(
     {
         "stickerfun": "**Plugin : **`stickerfun`\
         \n\n**Syntax : **`.sttxt` <your txt>\
-        \n**Usage : **Anime that makes your writing fun.\
+        \n**Uso: **Anime that makes your writing fun.\
         \n\n**Syntax : **`.stcr` <your txt>\
-        \n**Usage : **your text as sticker\
+        \n**Uso: **your text as sticker\
     "
     }
 )

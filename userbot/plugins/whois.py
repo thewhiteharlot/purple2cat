@@ -42,15 +42,15 @@ async def _(event):
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except:
-        dc_id = "Couldn't fetch DC ID!"
+        dc_id = "Não foi possível buscar o DC ID!"
     if spamwatch:
         ban = spamwatch.get_ban(user_id)
         if ban:
-            sw = f"**Spamwatch Banned :** `True` \n       **-**🤷‍♂️**Reason : **`{ban.reason}`"
+            sw = f"**Spamwatch banido:** `Sim` \n       **-**🤷‍♂️**Motivo: **`{ban.reason}`"
         else:
-            sw = f"**Spamwatch Banned :** `False`"
+            sw = f"**Spamwatch banido:** `Não`"
     else:
-        sw = "**Spamwatch Banned :**`Not Connected`"
+        sw = "**Spamwatch banido: **`Desconectado`"
     try:
         casurl = "https://api.cas.chat/check?user_id={}".format(user_id)
         data = get(casurl).json()
@@ -59,16 +59,16 @@ async def _(event):
         data = None
     if data:
         if data["ok"]:
-            cas = "**Antispam(CAS) Banned :** `True`"
+            cas = "**Antispam (CAS) Banido:** `Sim`"
         else:
-            cas = "**Antispam(CAS) Banned :** `False`"
+            cas = "**Antispam (CAS) Banido:** `Não`"
     else:
-        cas = "**Antispam(CAS) Banned :** `Couldn't Fetch`"
-    caption = """**Info of [{}](tg://user?id={}):
-   -🔖ID : **`{}`
-   **-**👥**Groups in Common : **`{}`
-   **-**🌏**Data Centre Number : **`{}`
-   **-**🔏**Restricted by telegram : **`{}`
+        cas = "**Antispam (CAS) Banido:** `Indisponível`"
+    caption = """**Informações de [{}](tg://user?id={}):
+   -🔖ID: **`{}`
+   **-**👥**Grupos em comum: **`{}`
+   **-**🌏**Data Center: **`{}`
+   **-**🔏**Restrição Telegram: **`{}`
    **-**🦅{}
    **-**👮‍♂️{}
 """.format(
@@ -119,20 +119,20 @@ async def get_full_user(event):
             return replied_user, None
         except Exception as e:
             return None, e
-    return None, "No input is found"
+    return None, "Nenhuma entrada encontrada"
 
 
 @bot.on(admin_cmd(pattern="whois(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="whois(?: |$)(.*)", allow_sudo=True))
 async def who(event):
-    cat = await edit_or_reply(event, "`Fetching userinfo wait....`")
+    cat = await edit_or_reply(event, "`Buscando informações do usuário, aguarde...`")
     if not os.path.isdir(TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TMP_DOWNLOAD_DIRECTORY)
     replied_user = await get_user(event)
     try:
         photo, caption = await fetch_info(replied_user, event)
     except AttributeError:
-        await edit_or_reply(cat, "`Could not fetch info of that user.`")
+        await edit_or_reply(cat, "`Não foi possível buscar as informações desse usuário.`")
         return
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
@@ -155,7 +155,7 @@ async def who(event):
 
 
 async def get_user(event):
-    """ Get the user from argument or replied message. """
+    """ Obtenha o usuário do argumento ou mensagem respondida. """
     if event.reply_to_msg_id and not event.pattern_match.group(1):
         previous_message = await event.get_reply_message()
         replied_user = await event.client(
@@ -184,13 +184,13 @@ async def get_user(event):
 
 
 async def fetch_info(replied_user, event):
-    """ Get details from the User object. """
+    """ Obtenha detalhes do objeto Usuário. """
     replied_user_profile_photos = await event.client(
         GetUserPhotosRequest(
             user_id=replied_user.user.id, offset=42, max_id=0, limit=80
         )
     )
-    replied_user_profile_photos_count = "User haven't set profile pic"
+    replied_user_profile_photos_count = "O usuário não tem foto de perfil"
     try:
         replied_user_profile_photos_count = replied_user_profile_photos.count
     except AttributeError:
@@ -201,7 +201,7 @@ async def fetch_info(replied_user, event):
     try:
         dc_id, location = get_input_location(replied_user.profile_photo)
     except:
-        dc_id = "Couldn't fetch DC ID!"
+        dc_id = "Não foi possível buscar o DC ID!"
     common_chat = replied_user.common_chats_count
     username = replied_user.user.username
     user_bio = replied_user.about
@@ -214,23 +214,23 @@ async def fetch_info(replied_user, event):
     first_name = (
         first_name.replace("\u2060", "")
         if first_name
-        else ("This User has no First Name")
+        else ("Esse usuário não tem nome")
     )
     last_name = last_name.replace("\u2060", "") if last_name else (" ")
-    username = "@{}".format(username) if username else ("This User has no Username")
-    user_bio = "This User has no About" if not user_bio else user_bio
-    caption = "<b><i>USER INFO from Durov's Database :</i></b>\n\n"
-    caption += f"<b>👤 First Name:</b> {first_name} {last_name}\n"
-    caption += f"<b>🤵 Username:</b> {username}\n"
+    username = "@{}".format(username) if username else ("Este usuário não tem nome de usuário")
+    user_bio = "Este usuário não tem bio" if not user_bio else user_bio
+    caption = "<b><i>Informações do Usuário:</i></b>\n\n"
+    caption += f"<b>👤 Nome:</b> {first_name} {last_name}\n"
+    caption += f"<b>🤵 Nome de usuário:</b> {username}\n"
     caption += f"<b>🔖 ID:</b> <code>{user_id}</code>\n"
-    caption += f"<b>🌏 Data Centre ID:</b> {dc_id}\n"
-    caption += f"<b>🖼 Number of Profile Pics:</b> {replied_user_profile_photos_count}\n"
-    caption += f"<b>🤖 Is Bot:</b> {is_bot}\n"
-    caption += f"<b>🔏 Is Restricted:</b> {restricted}\n"
-    caption += f"<b>🌐 Is Verified by Telegram:</b> {verified}\n\n"
+    caption += f"<b>🌏 ID Data Center:</b> {dc_id}\n"
+    caption += f"<b>🖼 Fotos Perfil:</b> {replied_user_profile_photos_count}\n"
+    caption += f"<b>🤖 Bot:</b> {is_bot}\n"
+    caption += f"<b>🔏 Restrito:</b> {restricted}\n"
+    caption += f"<b>🌐 Verificado:</b> {verified}\n\n"
     caption += f"<b>✍️ Bio:</b> \n<code>{user_bio}</code>\n\n"
-    caption += f"<b>👥 Common Chats with this user:</b> {common_chat}\n"
-    caption += f"<b>🔗 Permanent Link To Profile:</b> "
+    caption += f"<b>👥 Bate-papos comuns com este usuário:</b> {common_chat}\n"
+    caption += f"<b>🔗 Link permanente para o perfil:</b> "
     caption += f'<a href="tg://user?id={user_id}">{first_name}</a>'
     return photo, caption
 
@@ -238,7 +238,7 @@ async def fetch_info(replied_user, event):
 @bot.on(admin_cmd(pattern="link(?: |$)(.*)"))
 @bot.on(sudo_cmd(pattern="link(?: |$)(.*)", allow_sudo=True))
 async def permalink(mention):
-    """ For .link command, generates a link to the user's PM with a custom text. """
+    """ Para o comando .link, gera um link para o PV do usuário com um texto personalizado. """
     user, custom = await get_user_from_event(mention)
     if not user:
         return
@@ -252,7 +252,7 @@ async def permalink(mention):
 
 
 async def get_user_from_event(event):
-    """ Get the user from argument or replied message. """
+    """ Obtenha o usuário do argumento ou mensagem respondida. """
     args = event.pattern_match.group(1).split(":", 1)
     extra = None
     if event.reply_to_msg_id and len(args) != 2:
@@ -266,7 +266,7 @@ async def get_user_from_event(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit("`Pass the user's username, id or reply!`")
+            await event.edit("`Passe o nome de usuário, id ou resposta do usuário!`")
             return
         if event.message.entities:
             probable_user_mention_entity = event.message.entities[0]
@@ -296,11 +296,11 @@ async def ge(user, event):
 CMD_HELP.update(
     {
         "whois": "**Plugin : **`whois`\
-    \n\n  •  **Syntax : **`.whois <username> or reply to someones text with .whois`\
-    \n  •  **Function : **__Gets info of an user.__\
-    \n\n  •  **Syntax : **`.userinfo <username> or reply to someones text with .userinfo`\
-    \n  •  **Function : **__Gets information of an user such as restrictions ban by spamwatch or cas__\
+    \n\n  •  **Syntax : **`.whois <username> ou responda ao texto de alguém com .whois`\
+    \n  •  **Função : **__Obtém informações de um usuário.__\
+    \n\n  •  **Syntax : **`.userinfo <username> ou responder ao texto de alguém com .userinfo`\
+    \n  •  **Função : **__Obtém informações de um usuário, como restrições de proibição por spamwatch ou cas__\
     \n\n  •  **Syntax : **`.link id/username/reply`\
-    \n  •  **Function : **__Generates a link to the user's PM .__"
+    \n  •  **Função : **__Gera um link para o PV do usuário.__"
     }
 )

@@ -143,8 +143,8 @@ CMD_HELP.update(
     {
         "imposter": "**Plugin :** `imposter__`\
 \n\n**Syntax : **`.imp` / `.impn` <text>\
-\n**Usage : ** Find imposter with stickers.\
+\n**Uso: ** Find imposter with stickers.\
 \n\n**Syntax : **`.timp` / `.timpn` <text>\
-\n**Usage : ** Find imposter only text."
+\n**Uso: ** Find imposter only text."
     }
 )

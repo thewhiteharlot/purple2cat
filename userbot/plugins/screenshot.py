@@ -22,7 +22,7 @@ async def _(event):
     if Config.CHROME_BIN is None:
         await edit_or_reply(event, "Need to install Google Chrome. Module Stopping.")
         return
-    catevent = await edit_or_reply(event, "`Processing ...`")
+    catevent = await edit_or_reply(event, "`Processando...`")
     start = datetime.now()
     try:
         chrome_options = webdriver.ChromeOptions()
@@ -64,7 +64,7 @@ async def _(event):
             message_id = event.reply_to_msg_id
         end = datetime.now()
         ms = (end - start).seconds
-        hmm = f"**url : **{input_str} \n**Time :** `{ms} seconds`"
+        hmm = f"**url : **{input_str} \n**Time :** `{ms} segundos`"
         await catevent.delete()
         with io.BytesIO(im_png) as out_file:
             out_file.name = input_str + ".PNG"
@@ -93,7 +93,7 @@ async def _(event):
             "`Need to get an API key from https://screenshotlayer.com/product and need to set it SCREEN_SHOT_LAYER_ACCESS_KEY !`",
         )
         return
-    catevent = await edit_or_reply(event, "`Processing ...`")
+    catevent = await edit_or_reply(event, "`Processando...`")
     sample_url = "https://api.screenshotlayer.com/api/capture?access_key={}&url={}&fullpage={}&viewport={}&format={}&force={}"
     input_str = event.pattern_match.group(1)
     inputstr = input_str
@@ -113,7 +113,7 @@ async def _(event):
     contentType = response_api.headers["content-type"]
     end = datetime.now()
     ms = (end - start).seconds
-    hmm = f"**url : **{input_str} \n**Time :** `{ms} seconds`"
+    hmm = f"**url : **{input_str} \n**Time :** `{ms} segundos`"
     if "image" in contentType:
         with io.BytesIO(response_api.content) as screenshot_image:
             screenshot_image.name = "screencapture.png"
@@ -136,8 +136,8 @@ CMD_HELP.update(
     {
         "screenshot": "**Plugin : **`screenshot`\
         \n\n**Syntax : **`.ss <url>`\
-        \n**Function : **__Takes a screenshot of a website and sends the screenshot.__\
+        \n**Função : **__Takes a screenshot of a website and sends the screenshot.__\
         \n\n**Syntax : **`.scapture <url>`\
-        \n**Function : **__Takes a screenshot of a website and sends the screenshot need to set config var for this.__"
+        \n**Função : **__Takes a screenshot of a website and sends the screenshot need to set config var for this.__"
     }
 )

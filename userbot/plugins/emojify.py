@@ -72,9 +72,9 @@ CMD_HELP.update(
     {
         "emojify": "**Plugin :** `emojify`\
       \n\n**Syntax :** `.emoji` <text>\
-      \n****Usage : **Converts your text to big emoji text, with default emoji. \
+      \n****Uso: **Converts your text to big emoji text, with default emoji. \
       \n\n**Syntax :** `.cmoji` <emoji> <text>\
-      \n****Usage : **Converts your text to big emoji text, with your custom emoji.\
+      \n****Uso: **Converts your text to big emoji text, with your custom emoji.\
       "
     }
 )

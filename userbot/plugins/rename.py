@@ -32,14 +32,14 @@ async def _(event):
             reply_message,
             downloaded_file_name,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, catevent, c_time, "trying to download", file_name)
+                progress(d, t, catevent, c_time, "A baixar", file_name)
             ),
         )
         end = datetime.now()
         ms = (end - start).seconds
         if os.path.exists(downloaded_file_name):
             await catevent.edit(
-                f"**File Downloaded in {ms} seconds.**\n**File location : **`{downloaded_file_name}`"
+                f"**File Baixado em {ms} segundos.**\n**File location : **`{downloaded_file_name}`"
             )
         else:
             await catevent.edit("Error Occurred\n {}".format(input_str))
@@ -76,7 +76,7 @@ async def _(event):
             reply_message,
             downloaded_file_name,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, catevent, c_time, "trying to download", file_name)
+                progress(d, t, catevent, c_time, "A baixar", file_name)
             ),
         )
         end = datetime.now()
@@ -97,7 +97,7 @@ async def _(event):
                 thumb=thumb,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                     progress(
-                        d, t, event, c_time, "trying to upload", downloaded_file_name
+                        d, t, event, c_time, "A enviar", downloaded_file_name
                     )
                 ),
             )
@@ -105,7 +105,7 @@ async def _(event):
             os.remove(downloaded_file_name)
             ms_two = (end_two - end).seconds
             await catevent.edit(
-                f"`Downloaded file in {ms_one} seconds.`\n`Uploaded in {ms_two} seconds.`"
+                f"`Downloaded file em {ms_one} segundos.`\n`Enviado em {ms_two} segundos.`"
             )
             await asyncio.sleep(3)
             await catevent.delete()
@@ -144,7 +144,7 @@ async def _(event):
             reply_message,
             downloaded_file_name,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, catevent, c_time, "trying to download", file_name)
+                progress(d, t, catevent, c_time, "A baixar", file_name)
             ),
         )
         end = datetime.now()
@@ -165,7 +165,7 @@ async def _(event):
                 thumb=thumb,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
                     progress(
-                        d, t, event, c_time, "trying to upload", downloaded_file_name
+                        d, t, event, c_time, "A enviar", downloaded_file_name
                     )
                 ),
             )
@@ -173,7 +173,7 @@ async def _(event):
             os.remove(downloaded_file_name)
             ms_two = (end_two - end).seconds
             await catevent.edit(
-                f"`Downloaded file in {ms_one} seconds.`\n`Uploaded in {ms_two} seconds.`"
+                f"`Downloaded file em {ms_one} segundos.`\n`Enviado em {ms_two} segundos.`"
             )
             await asyncio.sleep(3)
             await catevent.delete()
@@ -189,11 +189,11 @@ CMD_HELP.update(
     {
         "rename": "**Plugin : **`rename`\
         \n\n  •  **Syntax : **`.rename filename`\
-        \n  •  **Function : **__Reply to media with above command to save in your server with that given filename__\
+        \n  •  **Função : **__Reply to media with above command to save in your server with that given filename__\
         \n\n  •  **Syntax : **`.rnup filename`\
-        \n  •  **Function : **__Reply to media with above command to rename and upload the file with given name as steam__\
+        \n  •  **Função : **__Reply to media with above command to rename and upload the file with given name as steam__\
         \n\n  •  **Syntax : **`.rnupf filename`\
-        \n  •  **Function : **__Reply to media with above command to rename and upload the file with given name as file__\
+        \n  •  **Função : **__Reply to media with above command to rename and upload the file with given name as file__\
         "
     }
 )

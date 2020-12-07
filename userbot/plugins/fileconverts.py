@@ -229,7 +229,7 @@ async def _(event):
             reply_message,
             Config.TMP_DOWNLOAD_DIRECTORY,
             progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                progress(d, t, event, c_time, "trying to download")
+                progress(d, t, event, c_time, "A baixar")
             ),
         )
     except Exception as e:  # pylint:disable=C0103,W0703
@@ -238,7 +238,7 @@ async def _(event):
         end = datetime.now()
         ms = (end - start).seconds
         await event.edit(
-            "Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms)
+            "Baixado para `{}` em {} segundos.".format(downloaded_file_name, ms)
         )
         new_required_file_name = ""
         new_required_file_caption = ""
@@ -281,7 +281,7 @@ async def _(event):
             voice_note = False
             supports_streaming = True
         else:
-            await event.edit("not supported")
+            await event.edit("não suportado")
             os.remove(downloaded_file_name)
             return
         logger.info(command_to_run)
@@ -308,7 +308,7 @@ async def _(event):
                 voice_note=voice_note,
                 supports_streaming=supports_streaming,
                 progress_callback=lambda d, t: asyncio.get_event_loop().create_task(
-                    progress(d, t, event, c_time, "trying to upload")
+                    progress(d, t, event, c_time, "A enviar")
                 ),
             )
             os.remove(new_required_file_name)
@@ -318,18 +318,18 @@ async def _(event):
 CMD_HELP.update(
     {
         "fileconverts": "**Plugin : **`fileconverts`\
-    \n\n**Syntax : **`.stoi` reply to sticker\
-    \n**Usage :**Converts sticker to image\
-    \n\n**Syntax : **`.itos` reply to image\
-    \n**Usage :**Converts image to sticker\
-    \n\n**Syntax :** `.ftoi` reply to image file\
-    \n**Usage :** Converts Given image file to straemable form\
-    \n\n**Syntax :** `.gif` reply to animated sticker\
-    \n**Usage :** Converts Given animated sticker to gif\
-    \n\n**Syntax :** `.ttf file name` reply to text message\
-    \n**Usage :** Converts Given text message to required file(given file name)\
-    \n\n**Syntax :**`.nfc voice` or `.nfc mp3` reply to required media to extract voice/mp3 :\
-    \n**Usage :**Converts the required media file to voice or mp3 file.\
+    \n\n**Syntax : **`.stoi` responder ao sticker\
+    \n**Uso:** Converte sticker em imagem\
+    \n\n**Syntax : **`.itos` responder a imagem\
+    \n**Uso:** Converte imagem em sticker\
+    \n\n**Syntax :** `.ftoi` responder uma mídia em formato de arquivo\
+    \n**Uso:** Converte determinado arquivo em formato de streaming\
+    \n\n**Syntax :** `.gif` responder a um sticker animado\
+    \n**Uso:** Converte o sticker animado em gif\
+    \n\n**Syntax :** `.ttf nome do arquivo` responder a mensagem de texto\
+    \n**Uso:** Converte determinada mensagem de texto em arquivo necessário (nome de arquivo fornecido)\
+    \n\n**Syntax :**`.nfc voice` or `.nfc mp3` responder à mídia solicitada para extrair voz/mp3 :\
+    \n**Uso:** Converte o arquivo de mídia solicitado em arquivo de voz ou mp3.\
     "
     }
 )

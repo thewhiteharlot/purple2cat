@@ -115,8 +115,8 @@ CMD_HELP.update(
     {
         "sed": "**Plugin : ** `sed`\
     \n\n  •  **Syntax : ** .s<delimiter><old word(s)><delimiter><new word(s)>\
-    \n  •  **Function : **Replaces a word or words using sed.\
+    \n  •  **Função : **Replaces a word or words using sed.\
     \n  •  **Delimiters : **`/, :, |, _`\
-    \n  •  **Example : **tag any sentence and type s/a/b. where is required word to replace and b is correct word."
+    \n  •  **Exemplo : **tag any sentence and type s/a/b. where is required word to replace and b is correct word."
     }
 )

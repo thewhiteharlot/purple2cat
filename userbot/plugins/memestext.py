@@ -120,29 +120,29 @@ CMD_HELP.update(
     {
         "memestext": "**Plugin : **`memestext`\
         \n\n  •  **Syntax :** `.congo`\
-        \n  •  **Function : **Congratulate the people.\
+        \n  •  **Função : **Congratulate the people.\
         \n\n  •  **Syntax :** `.shg`\
-        \n  •  **Function : **Shrug at it !!\
+        \n  •  **Função : **Shrug at it !!\
         \n\n  •  **Syntax :** `.runs`\
-        \n  •  **Function : **Run, run, RUNNN!\
+        \n  •  **Função : **Run, run, RUNNN!\
         \n\n  •  **Syntax :** `.noob`\
-        \n  •  **Function : **Whadya want to know? Are you a NOOB?\
+        \n  •  **Função : **Whadya want to know? Are you a NOOB?\
         \n\n  •  **Syntax :** `.insult`\
-        \n  •  **Function : **insult someone\
+        \n  •  **Função : **insult someone\
         \n\n  •  **Syntax :** `.hey`\
-        \n  •  **Function : **start a conversation with people\
+        \n  •  **Função : **start a conversation with people\
         \n\n  •  **Syntax :** `.pro`\
-        \n  •  **Function : **If you think you're pro, try this.\
+        \n  •  **Função : **If you think you're pro, try this.\
         \n\n  •  **Syntax :** `.react` <type>\
-        \n  •  **Function : **Make your userbot react. types are <happy ,think ,wave ,wtf ,love ,confused,dead, sad,dog>\
+        \n  •  **Função : **Make your userbot react. types are <happy ,think ,wave ,wtf ,love ,confused,dead, sad,dog>\
         \n\n  •  **Syntax :** `.10iq`\
-        \n  •  **Function : **You retard !!\
+        \n  •  **Função : **You retard !!\
         \n\n  •  **Syntax :** `.fp`\
-        \n  •  **Function : **send you face pam emoji!\
+        \n  •  **Função : **send you face pam emoji!\
         \n\n  •  **Syntax :** `.bt`\
-        \n  •  **Function : **Believe me, you will find this useful.\
+        \n  •  **Função : **Believe me, you will find this useful.\
         \n\n  •  **Syntax :** `.session`\
-        \n  •  **Function : **telethon session error code(fun)\
+        \n  •  **Função : **telethon session error code(fun)\
         "
     }
 )

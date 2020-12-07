@@ -24,7 +24,7 @@ CMD_HELP.update(
     {
         "schedule": "**Plugin : **`schedule`\
     \n\n**Syntax : **`.schd <time_in_seconds>  <message to send>`\
-    \n**Function : **Send you the given message after that particular time\
+    \n**Função : **Send you the given message after that particular time\
     "
     }
 )

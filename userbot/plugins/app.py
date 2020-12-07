@@ -157,9 +157,9 @@ CMD_HELP.update(
     {
         "app": "**Plugin :** `app`\
         \n**Syntax : **`.app [app name]`\
-        \n**Usage: **searches the app in the playstore and provides the link to the app in playstore and fetchs app details \
+        \n**Uso: **searches the app in the playstore and provides the link to the app in playstore and fetchs app details \
         \n\n**Syntax : **`.appr [app name]`\
-        \n**Usage: **searches the app in the playstore and provides the link to the app in playstore and fetchs app details with Xpl0iter request link. \
+        \n**Uso: **searches the app in the playstore and provides the link to the app in playstore and fetchs app details with Xpl0iter request link. \
         "
     }
 )

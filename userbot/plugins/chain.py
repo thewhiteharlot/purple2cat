@@ -33,6 +33,6 @@ CMD_HELP.update(
         "chain": """**Plugin :**`chain`
         
   • **Syntax : **`.chain reply to message`
-  • **Function : **__Reply this command to any converstion(or message) so that it finds chain length of that message__"""
+  • **Função : **__Reply this command to any converstion(or message) so that it finds chain length of that message__"""
     }
 )

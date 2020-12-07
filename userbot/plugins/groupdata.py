@@ -55,7 +55,7 @@ async def _(event):
     to_write_chat = await event.get_input_chat()
     chat = None
     if input_str:
-        mentions_heading = "Admins in {} Group: \n".format(input_str)
+        mentions_heading = "Admins em {} Group: \n".format(input_str)
         mentions = mentions_heading
         try:
             chat = await event.client.get_entity(input_str)
@@ -107,7 +107,7 @@ async def _(event):
     if not input_str:
         chat = to_write_chat
     else:
-        mentions = "Bots in {} Group: \n".format(input_str)
+        mentions = "Bots em {} Group: \n".format(input_str)
         try:
             chat = await event.client.get_entity(input_str)
         except Exception as e:
@@ -146,7 +146,7 @@ async def get_users(show):
             await edit_or_reply(show, "`Are you sure this is a group?`")
             return
     else:
-        mentions_heading = "Users in {} Group: \n".format(input_str)
+        mentions_heading = "Users em {} Group: \n".format(input_str)
         mentions = mentions_heading
         try:
             chat = await show.client.get_entity(input_str)
@@ -226,7 +226,7 @@ async def _(event):
                     functions.channels.EditBannedRequest(event.chat_id, i, rights)
                 )
             except FloodWaitError as ex:
-                logger.warn("sleeping for {} seconds".format(ex.seconds))
+                logger.warn("sleeping for {} segundos".format(ex.seconds))
                 await asyncio.sleep(ex.seconds)
             except Exception as ex:
                 await et.edit(str(ex))
@@ -646,7 +646,7 @@ async def fetch_info(chat, event):
         caption += f"Created: <code>{created.date().strftime('%b %d, %Y')} - {created.time()}</code>\n"
     else:
         caption += f"Created: <code>{chat_obj_info.date.date().strftime('%b %d, %Y')} - {chat_obj_info.date.time()}</code> {warn_emoji}\n"
-    caption += f"Data Centre ID: {dc_id}\n"
+    caption += f"ID do data center: {dc_id}\n"
     if exp_count is not None:
         chat_level = int((1 + sqrt(1 + 7 * exp_count / 14)) / 2)
         caption += f"{chat_type} level: <code>{chat_level}</code>\n"
@@ -686,7 +686,7 @@ async def fetch_info(chat, event):
         caption += f"Restricted: {restricted}\n"
         if chat_obj_info.restricted:
             caption += f"> Platform: {chat_obj_info.restriction_reason[0].platform}\n"
-            caption += f"> Reason: {chat_obj_info.restriction_reason[0].reason}\n"
+            caption += f"> Motivo: {chat_obj_info.restriction_reason[0].reason}\n"
             caption += f"> Text: {chat_obj_info.restriction_reason[0].text}\n\n"
         else:
             caption += "\n"
@@ -703,20 +703,20 @@ CMD_HELP.update(
     {
         "groupdata": "**Plugin : **`groupdata`\
     \n\n**Syntax : **`.kickme`\
-    \n**Usage : **__Throws you away from that chat_\
+    \n**Uso: **__Throws you away from that chat_\
     \n\n**Syntax : **`.admins or .admins <username of group >`\
-    \n**Usage : **__Retrieves a list of admins in the chat.__\
+    \n**Uso: **__Retrieves a list of admins in the chat.__\
     \n\n**Syntax : **`.bots or .bots <username of group >`\
-    \n**Usage : **__Retrieves a list of bots in the chat.__\
+    \n**Uso: **__Retrieves a list of bots in the chat.__\
     \n\n**Syntax : **`.users or .users <name of member>`\
-    \n**Function : **__Retrieves all (or queried) users in the chat.__\
+    \n**Função : **__Retrieves all (or queried) users in the chat.__\
     \n\n**Syntax : **`.unbanall`\
     \n**Function: **__Unbans everyone who are blocked in that group __\
     \n\n**Syntax : **`.ikuck`\
     \n**Function: **__stats of the group like no of users no of deleted users.__\
     \n\n**Syntax : **`.chatinfo or .chatinfo <username of group>`\
-    \n**Function : **__Shows you the total information of the required chat.__\
+    \n**Função : **__Shows you the total information of the required chat.__\
     \n\n**Syntax : **`.zombies`\
-    \n**Function : **__Searches for deleted accounts in a group. Use `.zombies clean` to remove deleted accounts from the group.__"
+    \n**Função : **__Searches for deleted accounts in a group. Use `.zombies clean` to remove deleted accounts from the group.__"
     }
 )

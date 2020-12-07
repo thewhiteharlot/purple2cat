@@ -1097,7 +1097,7 @@ class googleimagesdownload:
 
                 # image size parameter
                 if print_size:
-                    print("Image Size: " + str(self.file_size(path)))
+                    print("Tamanho: " + str(self.file_size(path)))
 
             except UnicodeEncodeError as e:
                 download_status = "fail"
@@ -1289,7 +1289,7 @@ class googleimagesdownload:
                 # image size parameter
                 if not silent_mode:
                     if print_size:
-                        print("Image Size: " + str(self.file_size(path)))
+                        print("Tamanho: " + str(self.file_size(path)))
 
             except UnicodeEncodeError as e:
                 download_status = "fail"

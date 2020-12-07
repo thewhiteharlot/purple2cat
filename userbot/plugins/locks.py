@@ -348,12 +348,12 @@ CMD_HELP.update(
     {
         "locks": "**Plugin : **`locks`\
         \n\n**  •  Syntax : **`.lock <all (or) type(s)> or .unlock <all (or) type(s)>`\
-        \n  •  **Function : **__Allows you to lock/unlock some common message types in the chat.\
+        \n  •  **Função : **__Allows you to lock/unlock some common message types in the chat.\
         \n  •  [NOTE: Requires proper admin rights in the chat !!]__\
         \n\n  •  **Available message types to lock/unlock are: \
         \n  •  API Options : **msg, media, sticker, gif, gamee, ainline, gpoll, adduser, cpin, changeinfo\
         \n**  •  DB Options : **bots, commands, email, forward, url\
         \n\n  •  **Syntax : **`.locks`\
-        \n  •  **Function : **__To see the active locks__"
+        \n  •  **Função : **__To see the active locks__"
     }
 )

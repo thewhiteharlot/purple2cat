@@ -41,6 +41,6 @@ CMD_HELP.update(
         "filext": """**Plugin : **`filext`
     
   • **Syntax : **`.filext <extension name>`
-  • **Function : **__Shows you the detailed information that extension type__"""
+  • **Função : **__Shows you the detailed information that extension type__"""
     }
 )

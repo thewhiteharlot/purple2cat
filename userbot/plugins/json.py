@@ -58,9 +58,9 @@ CMD_HELP.update(
         "json": """**Plugin : **`json`
 
   •  **Syntax : **`.json reply`
-  •  **Function : **__reply to a message to get details of that message in json format__  
+  •  **Função : **__reply to a message to get details of that message in json format__  
 
   •  **Syntax : **`.yaml reply`
-  •  **Function : **__reply to a message to get details of that message in yaml format__ """
+  •  **Função : **__reply to a message to get details of that message in yaml format__ """
     }
 )

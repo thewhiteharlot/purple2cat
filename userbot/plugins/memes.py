@@ -262,7 +262,7 @@ async def wish_check(event):
 async def source(e):
     await edit_or_reply(
         e,
-        "Click [here](https://github.com/sandy1709/catuserbot) to open this lit af repo.",
+        "Clique [aqui](https://github.com/xmtscf/catuserbot) para abrir o meu repositório.",
     )
 
 
@@ -337,14 +337,14 @@ async def gbun(event):
                 jnl += "**Victim Nigga's username** : @{}\n".format(usname)
             if len(gbunVar) > 0:
                 gbunm = "`{}`".format(gbunVar)
-                gbunr = "**Reason: **" + gbunm
+                gbunr = "**Motivo: **" + gbunm
                 jnl += gbunr
             else:
-                no_reason = "__Reason: Potential spammer. __"
+                no_reason = "__Motivo: Potential spammer. __"
                 jnl += no_reason
             await catevent.edit(jnl)
     else:
-        mention = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\nReason: Potential spammer. `"
+        mention = "`Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By Admin...\nMotivo: Potential spammer. `"
         await catevent.edit(mention)
 
 
@@ -352,31 +352,31 @@ CMD_HELP.update(
     {
         "memes": "**Plugin : **`memes`\
         \n\n  •  **Syntax :** `.cowsay`\
-        \n  •  **Function : **cow which says things.\
+        \n  •  **Função : **cow which says things.\
         \n\n  •  **Syntax :** `.coin <heads/tails>`\
-        \n  •  **Function : **Flips a coin !!\
+        \n  •  **Função : **Flips a coin !!\
         \n\n  •  **Syntax :** `.slap`\
-        \n  •  **Function : **reply to slap them with random objects !!\
+        \n  •  **Função : **reply to slap them with random objects !!\
         \n\n  •  **Syntax :** `.yes` ,`.no` , `.maybe` , `.decide`\
-        \n  •  **Function : **Sends you the respectively gif of command u used\
+        \n  •  **Função : **Sends you the respectively gif of command u used\
         \n\n  •  **Syntax :** `.shout text`\
-        \n  •  **Function : **shouts the text in a fun way\
+        \n  •  **Função : **shouts the text in a fun way\
         \n\n  •  **Syntax :** `.owo`\
-        \n  •  **Function : **UwU\
+        \n  •  **Função : **UwU\
         \n\n  •  **Syntax :** `.clap`\
-        \n  •  **Function : **Praise people!\
+        \n  •  **Função : **Praise people!\
         \n\n  •  **Syntax :** `.smk <text/reply>`\
-        \n  •  **Function : **A shit module for ツ , who cares.\
+        \n  •  **Função : **A shit module for ツ , who cares.\
         \n\n  •  **Syntax :** `.ftext <emoji/character>`\
-        \n  •  **Function : **Pay Respects.\
+        \n  •  **Função : **Pay Respects.\
         \n\n  •  **Syntax :** `.wish <reply/text>`\
-        \n  •  **Function : **Shows the chance of your success inspired from @CalsiBot.\
+        \n  •  **Função : **Shows the chance of your success inspired from @CalsiBot.\
         \n\n  •  **Syntax :** `.repo`\
-        \n  •  **Function : **Shows to source code link of catuserbot.\
+        \n  •  **Função : **Shows to source code link of catuserbot.\
         \n\n  •  **Syntax :** `.lfy <query>`\
-        \n  •  **Function : **Let me Google that for you real quick !!\
+        \n  •  **Função : **Let me Google that for you real quick !!\
         \n\n  •  **Syntax :** `.gbun <reason>`\
-        \n  •  **Function : **Fake gban action !!\
+        \n  •  **Função : **Fake gban action !!\
 "
     }
 )

@@ -60,7 +60,7 @@ LastLog = False
 @bot.on(admin_cmd(outgoing=True, pattern="lastfm$"))
 async def last_fm(lastFM):
     # For .lastfm command, fetch scrobble data from last.fm.
-    await lastFM.edit("Processing...")
+    await lastFM.edit("Processando...")
     preview = None
     playing = User(LASTFM_USERNAME, lastfm).get_now_playing()
     username = f"https://www.last.fm/user/{LASTFM_USERNAME}"
@@ -225,10 +225,10 @@ CMD_HELP.update(
     {
         "lastfm": "**Plugin : **`lastfm`\
     \n\n**Syntax : **`.lastfm`\
-    \n**Usage : **Shows currently scrobbling track or most recent scrobbles if nothing is playing.\
+    \n**Uso: **Shows currently scrobbling track or most recent scrobbles if nothing is playing.\
     \n\n**Syntax : **`.lastbio <on/off>`\
-    \n**Usage : **Enables/Disables last.fm current playing to bio.\
+    \n**Uso: **Enables/Disables last.fm current playing to bio.\
     \n\n**Syntax : **`.lastlog <on/off>`\
-    \n**Usage : **Enable/Disable last.fm bio logging in the bot-log group."
+    \n**Uso: **Enable/Disable last.fm bio logging in the bot-log group."
     }
 )

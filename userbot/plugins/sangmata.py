@@ -37,7 +37,7 @@ async def _(event):
     else:
         uid = reply_message.sender_id
     chat = "@SangMataInfo_bot"
-    catevent = await edit_or_reply(event, "`Processing...`")
+    catevent = await edit_or_reply(event, "`Processando...`")
     async with event.client.conversation(chat) as conv:
         try:
             await conv.send_message(f"/search_id {uid}")
@@ -85,9 +85,9 @@ CMD_HELP.update(
     {
         "sangmata": "**Plugin : **`sangmata`\
     \n\n**Syntax : **`.sg <username/userid/reply>`\
-    \n**Function : **__Shows you the previous name history of user.__\
+    \n**Função : **__Shows you the previous name history of user.__\
     \n\n**Syntax : **`.sgu <username/userid/reply>`\
-    \n**Function : **__Shows you the previous username history of user.__\
+    \n**Função : **__Shows you the previous username history of user.__\
     "
     }
 )

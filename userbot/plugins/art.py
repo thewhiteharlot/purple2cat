@@ -425,6 +425,6 @@ CMD_HELP.update(
   •  `.shitos`
   •  `.dislike`
   
-**Function : **__Different kind of art plugins try out yourself__"""
+**Função : **__Different kind of art plugins try out yourself__"""
     }
 )
