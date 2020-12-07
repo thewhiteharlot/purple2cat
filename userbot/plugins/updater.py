@@ -224,11 +224,11 @@ async def upstream(event):
     return
 
 
-@bot.on(admin_cmd(outgoing=True, pattern=r"richard$"))
-@bot.on(sudo_cmd(pattern="richard$", allow_sudo=True))
+@bot.on(admin_cmd(outgoing=True, pattern=r"rijard$"))
+@bot.on(sudo_cmd(pattern="rijard$", allow_sudo=True))
 async def upstream(event):
     event = await edit_or_reply(
-        event, "`Puxando o repositório do erickTABAN, espere um segundo ....`"
+        event, "`Puxando o repositório do Rijard, espere um segundo ....`"
     )
     off_repo = "https://github.com/erickTABAN/catuserbot"
     catcmd = f"rm -rf .git"
