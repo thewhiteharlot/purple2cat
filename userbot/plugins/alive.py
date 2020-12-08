@@ -6,14 +6,14 @@ from telethon import version
 from ..utils import admin_cmd, edit_or_reply, sudo_cmd
 from . import ALIVE_NAME, CMD_HELP, StartTime, catdef, catversion, mention, reply_id
 
-DEFAULTUSER = ALIVE_NAME or "cat"
+DEFAULTUSER = ALIVE_NAME or "Purple"
 CAT_IMG = Config.ALIVE_PIC
 CUSTOM_ALIVE_TEXT = Config.CUSTOM_ALIVE_TEXT or "✮ FUNCIONANDO NORMALMENTE ✮"
 EMOJI = Config.CUSTOM_ALIVE_EMOJI or "  ✥ "
 
 
-@bot.on(admin_cmd(outgoing=True, pattern="alive$"))
-@bot.on(sudo_cmd(pattern="alive$", allow_sudo=True))
+@bot.on(admin_cmd(outgoing=True, pattern="on$"))
+@bot.on(sudo_cmd(pattern="on$", allow_sudo=True))
 async def amireallyalive(alive):
     if alive.fwd_from:
         return
