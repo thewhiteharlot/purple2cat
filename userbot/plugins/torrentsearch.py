@@ -89,7 +89,7 @@ async def tor_search(event):
         search_str = search_str.replace("+", " ")
     except BaseException:
         pass
-    msg = "**Torrent Search Query**\n`{}`".format(search_str) + "\n**Results**\n"
+    msg = "**Pesquisa Torrent**\n`{}`".format(search_str) + "\n**Results**\n"
     counter = 0
     while counter != len(titles):
         msg = (
@@ -141,7 +141,7 @@ async def _(event):
     end = datetime.now()
     ms = (end - start).seconds
     await event.edit(
-        f"Scrapped {input_type} for {input_str} em {ms} segundos. Obtained Results: \n {output_str}",
+        f"Scrapped {input_type} for {input_str} em {ms} segundos. Resultados obtidos: \n {output_str}",
         link_preview=False,
         parse_mode="html",
     )

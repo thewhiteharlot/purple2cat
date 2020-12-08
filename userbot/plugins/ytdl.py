@@ -33,7 +33,7 @@ async def download_video(v_url):
     """ For .ytdl command, download media from YouTube and many other sites. """
     url = v_url.pattern_match.group(2)
     ytype = v_url.pattern_match.group(1).lower()
-    v_url = await edit_or_reply(v_url, "`Preparing to download...`")
+    v_url = await edit_or_reply(v_url, "`Preparando para baixar...`")
     reply_to_id = await reply_id(v_url)
     if ytype == "a":
         opts = {
@@ -83,27 +83,27 @@ async def download_video(v_url):
         await v_url.edit(f"`{str(DE)}`")
         return
     except ContentTooShortError:
-        await v_url.edit("`The download content was too short.`")
+        await v_url.edit("`O conteúdo do download era muito pequeno.`")
         return
     except GeoRestrictedError:
         await v_url.edit(
-            "`Video is not available from your geographic location due to geographic restrictions imposed by a website.`"
+            "`O vídeo não está disponível em sua localização/localização do servidor..`"
         )
         return
     except MaxDownloadsReached:
-        await v_url.edit("`Max-downloads limit has been reached.`")
+        await v_url.edit("`O limite máximo de downloads foi atingido.`")
         return
     except PostProcessingError:
-        await v_url.edit("`There was an error during post processing.`")
+        await v_url.edit("`Ocorreu um erro durante o pós-processamento.`")
         return
     except UnavailableVideoError:
-        await v_url.edit("`Media is not available in the requested format.`")
+        await v_url.edit("`A mídia não está disponível no formato solicitado.`")
         return
     except XAttrMetadataError as XAME:
         await v_url.edit(f"`{XAME.code}: {XAME.msg}\n{XAME.reason}`")
         return
     except ExtractorError:
-        await v_url.edit("`There was an error during info extraction.`")
+        await v_url.edit("`Ocorreu um erro durante a extração de informações.`")
         return
     except Exception as e:
         await v_url.edit(f"{str(type(e)): {str(e)}}")
@@ -116,7 +116,7 @@ async def download_video(v_url):
         catthumb = None
     if song:
         await v_url.edit(
-            f"`Preparing to upload song:`\
+            f"`Preparando para fazer upload da música:`\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*"
         )
@@ -142,7 +142,7 @@ async def download_video(v_url):
         os.remove(f"{ytdl_data['id']}.mp3")
     elif video:
         await v_url.edit(
-            f"`Preparing to upload video:`\
+            f"`Preparando para enviar vídeo:`\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*"
         )
@@ -173,7 +173,7 @@ async def yt_search(video_q):
     if not Config.YOUTUBE_API_KEY:
         await edit_or_reply(
             video_q,
-            "`Error: YouTube API key missing! Add it to reveal config vars in heroku or userbot/uniborgConfig.py in github fork.`",
+            "`Erro: chave de API do YouTube ausente!.`",
         )
         return
     video_q = await edit_or_reply(video_q, "```Processando...```")
@@ -183,7 +183,7 @@ async def yt_search(video_q):
         title = f"{unescape(video['snippet']['title'])}"
         link = f"https://youtu.be/{video['id']['videoId']}"
         result += f"{title}\n{link}\n\n"
-    reply_text = f"**Search Query:**\n`{query}`\n\n**Results:**\n\n{result}"
+    reply_text = f"**Pesquisa:**\n`{query}`\n\n**Resultados:**\n\n{result}"
     await video_q.edit(reply_text)
 
 
@@ -234,11 +234,11 @@ async def kakashi(event):
     link = event.pattern_match.group(1)
     if "www.instagram.com" not in link:
         await edit_or_reply(
-            event, "` I need a Instagram link to download it's Video...`(*_*)"
+            event, "` Eu preciso de um link do Instagram para baixar o vídeo...`(*_*)"
         )
     else:
         start = datetime.now()
-        catevent = await edit_or_reply(event, "**Downloading.....**")
+        catevent = await edit_or_reply(event, "**Baixando...**")
     async with event.client.conversation(chat) as conv:
         try:
             msg_start = await conv.send_message("/start")
@@ -250,7 +250,7 @@ async def kakashi(event):
             video = await conv.get_response()
             await event.client.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
-            await catevent.edit("**Error:** `unblock` @allsaverbot `and retry!`")
+            await catevent.edit("**Erro:** `unblock` @allsaverbot `e tente novamente!`")
             return
         await catevent.delete()
         cat = await event.client.send_file(
@@ -272,13 +272,13 @@ CMD_HELP.update(
     {
         "ytdl": "**Plugin :** `ytdl`\
     \n\n  •  **Syntax :** `.yta link`\
-    \n  •  **Função : **__downloads the audio from the given link(Suports the all sites which support youtube-dl)__\
+    \n  •  **Função : **__Baixa o áudio do link fornecido (suporta todos os sites que suportam youtube-dl)__\
     \n\n  •  **Syntax : **`.ytv link`\
-    \n  •  **Função : **__downloads the video from the given link(Suports the all sites which support youtube-dl)__\
+    \n  •  **Função : **__Baixa o vídeo do link fornecido (suporta todos os sites que suportam youtube-dl)__\
     \n\n  •  **Syntax : **`.yts query`\
-    \n  •  **Função : **__Fetches youtube results you need api token for this__\
+    \n  •  **Função : **__Busca os resultados do YouTube, você precisa do token de API.__\
     \n\n  •  **Syntax : **`.insta` <link>\
-    \n  •  **Função : **__Downloads the video from the given instagram link__\
+    \n  •  **Função : **__Baixa o vídeo do link do instagram fornecido__\
     "
     }
 )

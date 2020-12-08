@@ -1253,7 +1253,7 @@ async def check_progress_for_dl(event, gid, previous):
                 if not file.error_message:
                     percentage = int(file.progress)
                     downloaded = percentage * int(file.total_length) / 100
-                    prog_str = "**Downloading : **`[{0}{1}] {2}`".format(
+                    prog_str = "**Baixando: **`[{0}{1}] {2}`".format(
                         "".join(["▰" for i in range(math.floor(percentage / 10))]),
                         "".join(["▱" for i in range(10 - math.floor(percentage / 10))]),
                         file.progress_string(),

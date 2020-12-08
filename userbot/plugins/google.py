@@ -43,7 +43,7 @@ async def gsearch(q_event):
         except IndexError:
             break
     await catevent.edit(
-        "**Search Query:**\n`" + match + "`\n\n**Results:**\n" + msg, link_preview=False
+        "**Pesquisa:**\n`" + match + "`\n\n**Resultados:**\n" + msg, link_preview=False
     )
     if BOTLOG:
         await q_event.client.send_message(

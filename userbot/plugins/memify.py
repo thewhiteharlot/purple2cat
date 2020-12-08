@@ -61,7 +61,7 @@ async def memes(cat):
         return
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    cat = await edit_or_reply(cat, "`Downloading media......`")
+    cat = await edit_or_reply(cat, "`Baixando mídia......`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
@@ -145,7 +145,7 @@ async def memes(cat):
     catid = await reply_id(cat)
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    cat = await edit_or_reply(cat, "`Downloading media......`")
+    cat = await edit_or_reply(cat, "`Baixando mídia......`")
     await asyncio.sleep(2)
     catsticker = await reply.download_media(file="./temp/")
     if not catsticker.endswith((".mp4", ".webp", ".tgs", ".png", ".jpg", ".mov")):
@@ -221,7 +221,7 @@ async def memes(cat):
     catid = cat.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    cat = await edit_or_reply(cat, "`Downloading media......`")
+    cat = await edit_or_reply(cat, "`Baixando mídia......`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
@@ -305,7 +305,7 @@ async def memes(cat):
     catid = cat.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    cat = await edit_or_reply(cat, "`Downloading media......`")
+    cat = await edit_or_reply(cat, "`Baixando mídia......`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
@@ -389,7 +389,7 @@ async def memes(cat):
     catid = cat.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    cat = await edit_or_reply(cat, "`Downloading media......`")
+    cat = await edit_or_reply(cat, "`Baixando mídia......`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
@@ -473,7 +473,7 @@ async def memes(cat):
     catid = cat.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    cat = await edit_or_reply(cat, "`Downloading media......`")
+    cat = await edit_or_reply(cat, "`Baixando mídia......`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
@@ -557,7 +557,7 @@ async def memes(cat):
     catid = cat.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    cat = await edit_or_reply(cat, "`Downloading media......`")
+    cat = await edit_or_reply(cat, "`Baixando mídia......`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
@@ -643,7 +643,7 @@ async def memes(cat):
     catid = cat.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    cat = await edit_or_reply(cat, "`Downloading media......`")
+    cat = await edit_or_reply(cat, "`Baixando mídia......`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
@@ -741,7 +741,7 @@ async def memes(cat):
     catid = cat.reply_to_msg_id
     if not os.path.isdir("./temp/"):
         os.mkdir("./temp/")
-    cat = await edit_or_reply(cat, "`Downloading media......`")
+    cat = await edit_or_reply(cat, "`Baixando mídia......`")
     from telethon.tl.functions.messages import ImportChatInviteRequest as Get
 
     await asyncio.sleep(2)
