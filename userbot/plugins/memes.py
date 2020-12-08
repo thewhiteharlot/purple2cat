@@ -262,7 +262,7 @@ async def wish_check(event):
 async def source(e):
     await edit_or_reply(
         e,
-        "Clique [aqui](https://github.com/xmtscf/catuserbot) para abrir o meu repositório.",
+        "Clique [aqui](https://github.com/thewhiteharlot/purple2cat) para abrir o meu repositório.",
     )
 
 
